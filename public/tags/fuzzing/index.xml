@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Fuzzing on Nooblogaurus</title>
-    <link>http://localhost:43731/tags/fuzzing/</link>
+    <link>https://NoobosaurusBlog.github.io/tags/fuzzing/</link>
     <description>Recent content in Fuzzing on Nooblogaurus</description>
     <generator>Hugo -- 0.139.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:43731/tags/fuzzing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NoobosaurusBlog.github.io/tags/fuzzing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffuf</title>
-      <link>http://localhost:43731/cheat-sheets/ffuf/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/ffuf/</guid>
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/</guid>
       <description>&lt;p&gt;&lt;strong&gt;FFUF&lt;/strong&gt; (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -c -w path/to/wordlist -u https://target_url/FUZZ
@@ -61,9 +61,7 @@
 &lt;li&gt;&lt;strong&gt;Interactive Mode&lt;/strong&gt;: Press &lt;code&gt;Enter&lt;/code&gt; while FFUF is running to access interactive features, such as reconfiguring filters or saving the state.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Multiple Payloads&lt;/strong&gt;: Use the &lt;code&gt;FUZZ&lt;/code&gt; keyword multiple times in a URL (e.g., &lt;code&gt;https://example.org/path/FUZZ/another_path/FUZZ&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Variables in URLs&lt;/strong&gt;: Specify payload locations using variables (e.g., &lt;code&gt;https://example.org/path/{var1}/another_path/{var2}&lt;/code&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;FFUF is a versatile and efficient tool for web fuzzing. By mastering its options and syntax, you can quickly uncover hidden files, parameters, and vulnerabilities in your targets. Keep this cheat sheet handy to optimize your fuzzing workflows!&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

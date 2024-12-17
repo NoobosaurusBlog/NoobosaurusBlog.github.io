@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cheat Sheet on Nooblogaurus</title>
-    <link>http://localhost:43731/tags/cheat-sheet/</link>
+    <link>https://NoobosaurusBlog.github.io/tags/cheat-sheet/</link>
     <description>Recent content in Cheat Sheet on Nooblogaurus</description>
     <generator>Hugo -- 0.139.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:43731/tags/cheat-sheet/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NoobosaurusBlog.github.io/tags/cheat-sheet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffuf</title>
-      <link>http://localhost:43731/cheat-sheets/ffuf/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/ffuf/</guid>
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/</guid>
       <description>&lt;p&gt;&lt;strong&gt;FFUF&lt;/strong&gt; (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -c -w path/to/wordlist -u https://target_url/FUZZ
@@ -61,16 +61,14 @@
 &lt;li&gt;&lt;strong&gt;Interactive Mode&lt;/strong&gt;: Press &lt;code&gt;Enter&lt;/code&gt; while FFUF is running to access interactive features, such as reconfiguring filters or saving the state.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Multiple Payloads&lt;/strong&gt;: Use the &lt;code&gt;FUZZ&lt;/code&gt; keyword multiple times in a URL (e.g., &lt;code&gt;https://example.org/path/FUZZ/another_path/FUZZ&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Variables in URLs&lt;/strong&gt;: Specify payload locations using variables (e.g., &lt;code&gt;https://example.org/path/{var1}/another_path/{var2}&lt;/code&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;FFUF is a versatile and efficient tool for web fuzzing. By mastering its options and syntax, you can quickly uncover hidden files, parameters, and vulnerabilities in your targets. Keep this cheat sheet handy to optimize your fuzzing workflows!&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Hydra</title>
-      <link>http://localhost:43731/cheat-sheets/hydra/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/hydra/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/hydra/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Hydra&lt;/strong&gt; is a powerful and flexible password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.&lt;/p&gt;
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/hydra/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hydra&lt;/strong&gt; is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;IP&amp;gt; &amp;lt;protocol&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-flags&#34;&gt;Common Flags&lt;/h2&gt;
@@ -91,11 +89,10 @@
     </item>
     <item>
       <title>nmap</title>
-      <link>http://localhost:43731/cheat-sheets/nmap/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/nmap/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/nmap/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Nmap&lt;/strong&gt; (Network Mapper) is the go-to tool for network discovery and security auditing. It’s powerful, flexible, and essential for professionals in cybersecurity.&lt;/p&gt;
-&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/nmap/</guid>
+      <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap &amp;lt;target IP&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sT -sS -Pn -v 10.10.10.10
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -A -sS -Pn 10.10.10.10
@@ -142,11 +139,10 @@
     </item>
     <item>
       <title>Meterpreter</title>
-      <link>http://localhost:43731/cheat-sheets/meterpreter/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/meterpreter/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/meterpreter/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Meterpreter&lt;/strong&gt;, the post-exploitation payload for Metasploit, is your Swiss Army knife for interacting with compromised systems. It provides a suite of commands to navigate, persist, and extract information from your target.&lt;/p&gt;
-&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/meterpreter/</guid>
+      <description>&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 &lt;p&gt;Start with the essentials to get a lay of the land:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;help&lt;/code&gt;&lt;/strong&gt;: Display a list of available commands (your lifeline when you&amp;rsquo;re lost).&lt;/li&gt;
@@ -161,9 +157,9 @@
     </item>
     <item>
       <title>smbclient</title>
-      <link>http://localhost:43731/cheat-sheets/smbclient/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/smbclient/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/smbclient/</guid>
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/smbclient/</guid>
       <description>&lt;p&gt;&lt;strong&gt;smbclient&lt;/strong&gt; is a command-line tool that allows you to interact with SMB (Server Message Block) file shares. Whether you’re uploading files, listing directories, or troubleshooting network shares, this tool is your go-to for SMB.&lt;/p&gt;
 &lt;h2 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h2&gt;
 &lt;p&gt;To connect to an SMB file share, use the following syntax:&lt;/p&gt;
@@ -176,11 +172,10 @@
     </item>
     <item>
       <title>SMBMap</title>
-      <link>http://localhost:43731/cheat-sheets/smbmap/</link>
+      <link>https://NoobosaurusBlog.github.io/cheat-sheets/smbmap/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:43731/cheat-sheets/smbmap/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;SMBMap&lt;/strong&gt; is a command-line tool for enumerating and interacting with SMB shares. It allows you to execute commands, upload/download files, and assess permissions effectively.&lt;/p&gt;
-&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
+      <guid>https://NoobosaurusBlog.github.io/cheat-sheets/smbmap/</guid>
+      <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smbmap -u &amp;lt;username&amp;gt; -p &amp;lt;password&amp;gt; -H &amp;lt;host&amp;gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-usage-examples&#34;&gt;Common Usage Examples&lt;/h2&gt;
 &lt;h3 id=&#34;connect-with-null-password&#34;&gt;Connect with Null Password&lt;/h3&gt;
@@ -219,9 +214,7 @@
 &lt;li&gt;&lt;strong&gt;Command Execution&lt;/strong&gt;: Execute remote commands on accessible shares.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;File Transfers&lt;/strong&gt;: Upload or download files directly from SMB shares.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;User Enumeration&lt;/strong&gt;: Discover user accounts configured on the target system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;SMBMap is an efficient and user-friendly tool for SMB enumeration and interaction. Its flexibility makes it ideal for penetration testing and auditing SMB shares. Keep this cheat sheet handy to streamline your workflows.&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
