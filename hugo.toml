@@ -1,0 +1,85 @@
+baseURL = "https://nooblogaurus.com/"
+languageCode = "en-us"
+title = "Nooblogaurus"
+theme = "PaperMod"
+paginate = 5
+
+[params.profileMode]
+  enabled = true
+  author = "Noobosaurus"
+  title = "Welcome to Nooblogaurus! 🦖"
+  subtitle = "A blog about cybersecurity, tools, cheat sheets, and more."
+  showReadingTime = true
+  showToc = true
+  defaultTheme = "auto"  # Auto-switch dark/light mode
+  favicon = "favicon.ico"
+  imageUrl = "/assets/images/LOGO2.png" # optional
+  imageTitle = "Noobosaurus R3x" # optional
+  imageWidth = 120 # custom size
+  imageHeight = 120 # custom size
+
+# [params.homeInfoParams]
+#   title = "Welcome to Nooblogaurus! 🦖"
+#   content = "Explore cheat sheets, tools, scripts, and articles on cyber, CTFs, and more. Dig in and discover!"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"] # JSON is necessary for search
+
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1_000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = [ "title", "permalink", "summary", "content" ]
+
+[[params.profileMode.buttons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/noobosaurus-r3x-683783231/"
+
+[[params.profileMode.buttons]]
+  name = "github"
+  url = "https://github.com/noobosaurus-r3x"
+
+[[params.profileMode.buttons]]
+  name = "x"
+  url = "https://x.com/NoobosaurusR3x"
+
+[[params.profileMode.buttons]]
+  name = "YouTube HacktBack"
+  url = "https://www.youtube.com/@HacktBack"
+
+[[params.profileMode.buttons]]
+  name = "YouTube Noobosaurus"
+  url = "https://www.youtube.com/@NoobosaurusR3x"
+
+[params]
+disableSearch = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Articles"
+    url = "/articles/"
+    weight = 4
+  [[menu.main]]
+    name = "Tools"
+    url = "/tools/"
+    weight = 3
+  [[menu.main]]
+    name = "Cheat Sheets"
+    url = "/cheat-sheets/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 6
+

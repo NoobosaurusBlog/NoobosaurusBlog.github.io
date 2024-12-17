@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Script on Nooblogaurus</title>
+    <link>http://localhost:43731/tags/script/</link>
+    <description>Recent content in Script on Nooblogaurus</description>
+    <generator>Hugo -- 0.139.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:43731/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>redflagger</title>
+      <link>http://localhost:43731/tools/redflagger/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:43731/tools/redflagger/</guid>
+      <description>&lt;p&gt;Daily domain reports are a treasure trove for cybersecurity analysts, but collecting and organizing them can quickly become tedious. That’s where &lt;strong&gt;RedFlagger&lt;/strong&gt; comes in. This lightweight Bash script automates the process of downloading and aggregating reports from &lt;a href=&#34;https://dl.red.flag.domains/daily/&#34;&gt;Red Flag Domains&lt;/a&gt;. It’s simple, efficient, and built to save time—whether you’re sifting through a few recent reports or analyzing a year’s worth of data.&lt;/p&gt;
+&lt;h2 id=&#34;the-backstory&#34;&gt;The Backstory&lt;/h2&gt;
+&lt;p&gt;This project started as a bit of a joke. My friend &lt;strong&gt;lil-doudou&lt;/strong&gt; had written an excellent Python tool called &lt;a href=&#34;https://github.com/lil-doudou/NewRedflag&#34;&gt;NewRedflag&lt;/a&gt; to handle domain report aggregation, but he’s also a massive Bash enthusiast. So, as a playful nod to his love for scripting, I decided to rewrite the functionality in Bash—simpler, lighter, and arguably more fun (depending on your feelings about shell scripts).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Webpage Infos Extractor</title>
+      <link>http://localhost:43731/tools/webpage_infos_extractor/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:43731/tools/webpage_infos_extractor/</guid>
+      <description>&lt;p&gt;When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. &lt;strong&gt;Webpage Infos Extractor&lt;/strong&gt; is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.&lt;/p&gt;
+&lt;h2 id=&#34;why-build-this&#34;&gt;Why Build This?&lt;/h2&gt;
+&lt;p&gt;Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wordlister</title>
+      <link>http://localhost:43731/tools/wordlister/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:43731/tools/wordlister/</guid>
+      <description>&lt;p&gt;Sometimes you just need a clean wordlist without the frills of a complicated tool. That’s where this &lt;strong&gt;Wordlist Generator&lt;/strong&gt; comes in. It’s a simple Bash script designed to pull unique words from one or more text files, sort them, and save them neatly into a wordlist. Whether you’re prepping for a dictionary attack, building a natural language dataset, or just satisfying your curiosity, this script gets the job done quickly and efficiently.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
