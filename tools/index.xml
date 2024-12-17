@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tools on Nooblogaurus</title>
+    <link>https://NoobosaurusBlog.github.io/tools/</link>
+    <description>Recent content in Tools on Nooblogaurus</description>
+    <generator>Hugo -- 0.139.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://NoobosaurusBlog.github.io/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InspecTor</title>
+      <link>https://NoobosaurusBlog.github.io/tools/inspector/</link>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/inspector/</guid>
+      <description>&lt;h2 id=&#34;inspector-a-streamlined-tool-for-website-metadata-extraction&#34;&gt;InspecTor: A Streamlined Tool for Website Metadata Extraction&lt;/h2&gt;
+&lt;p&gt;Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Osintagram</title>
+      <link>https://NoobosaurusBlog.github.io/tools/osintagram/</link>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/osintagram/</guid>
+      <description>&lt;p&gt;Gathering OSINT (Open-Source Intelligence) from Instagram used to be straightforward—grab a GitHub tool, run it, and get results. Then Instagram’s API updates broke nearly everything, leaving most tools useless. That’s where &lt;strong&gt;Osintagram&lt;/strong&gt; comes in: a simple script I put together to finally get Instagram OSINT working again.&lt;/p&gt;
+&lt;p&gt;I’m no developer, just someone frustrated by older tools failing in CTFs and OSINT exercises. Osintagram isn’t perfect, but it’s built to handle the updated systems Instagram uses today. Let me show you how it works and why it might save you some headaches.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FlaskOfCookies</title>
+      <link>https://NoobosaurusBlog.github.io/tools/flask_of_cookies/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/flask_of_cookies/</guid>
+      <description>&lt;p&gt;Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together &lt;strong&gt;FlaskOfCookies&lt;/strong&gt;, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.&lt;/p&gt;
+&lt;p&gt;To be clear, this isn’t entirely my invention. It started because I hit a wall on a &lt;strong&gt;Root-Me challenge&lt;/strong&gt;, I couldn’t get it done with &lt;strong&gt;noraj’s tool&lt;/strong&gt; (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>redflagger</title>
+      <link>https://NoobosaurusBlog.github.io/tools/redflagger/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/redflagger/</guid>
+      <description>&lt;p&gt;Daily domain reports are a treasure trove for cybersecurity analysts, but collecting and organizing them can quickly become tedious. That’s where &lt;strong&gt;RedFlagger&lt;/strong&gt; comes in. This lightweight Bash script automates the process of downloading and aggregating reports from &lt;a href=&#34;https://dl.red.flag.domains/daily/&#34;&gt;Red Flag Domains&lt;/a&gt;. It’s simple, efficient, and built to save time—whether you’re sifting through a few recent reports or analyzing a year’s worth of data.&lt;/p&gt;
+&lt;h2 id=&#34;the-backstory&#34;&gt;The Backstory&lt;/h2&gt;
+&lt;p&gt;This project started as a bit of a joke. My friend &lt;strong&gt;lil-doudou&lt;/strong&gt; had written an excellent Python tool called &lt;a href=&#34;https://github.com/lil-doudou/NewRedflag&#34;&gt;NewRedflag&lt;/a&gt; to handle domain report aggregation, but he’s also a massive Bash enthusiast. So, as a playful nod to his love for scripting, I decided to rewrite the functionality in Bash—simpler, lighter, and arguably more fun (depending on your feelings about shell scripts).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Webpage Infos Extractor</title>
+      <link>https://NoobosaurusBlog.github.io/tools/webpage_infos_extractor/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/webpage_infos_extractor/</guid>
+      <description>&lt;p&gt;When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. &lt;strong&gt;Webpage Infos Extractor&lt;/strong&gt; is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.&lt;/p&gt;
+&lt;h2 id=&#34;why-build-this&#34;&gt;Why Build This?&lt;/h2&gt;
+&lt;p&gt;Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wordlister</title>
+      <link>https://NoobosaurusBlog.github.io/tools/wordlister/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/wordlister/</guid>
+      <description>&lt;p&gt;Sometimes you just need a clean wordlist without the frills of a complicated tool. That’s where this &lt;strong&gt;Wordlist Generator&lt;/strong&gt; comes in. It’s a simple Bash script designed to pull unique words from one or more text files, sort them, and save them neatly into a wordlist. Whether you’re prepping for a dictionary attack, building a natural language dataset, or just satisfying your curiosity, this script gets the job done quickly and efficiently.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

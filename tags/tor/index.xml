@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tor on Nooblogaurus</title>
+    <link>https://NoobosaurusBlog.github.io/tags/tor/</link>
+    <description>Recent content in Tor on Nooblogaurus</description>
+    <generator>Hugo -- 0.139.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://NoobosaurusBlog.github.io/tags/tor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InspecTor</title>
+      <link>https://NoobosaurusBlog.github.io/tools/inspector/</link>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://NoobosaurusBlog.github.io/tools/inspector/</guid>
+      <description>&lt;h2 id=&#34;inspector-a-streamlined-tool-for-website-metadata-extraction&#34;&gt;InspecTor: A Streamlined Tool for Website Metadata Extraction&lt;/h2&gt;
+&lt;p&gt;Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

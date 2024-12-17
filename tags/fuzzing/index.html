@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Fuzzing | Nooblogaurus</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://NoobosaurusBlog.github.io/tags/fuzzing/">
+<link crossorigin="anonymous" href="https://NoobosaurusBlog.github.io/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://NoobosaurusBlog.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://NoobosaurusBlog.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://NoobosaurusBlog.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://NoobosaurusBlog.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://NoobosaurusBlog.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://NoobosaurusBlog.github.io/tags/fuzzing/index.xml">
+<link rel="alternate" hreflang="en" href="https://NoobosaurusBlog.github.io/tags/fuzzing/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://NoobosaurusBlog.github.io/tags/fuzzing/">
+  <meta property="og:site_name" content="Nooblogaurus">
+  <meta property="og:title" content="Fuzzing">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fuzzing">
+<meta name="twitter:description" content="">
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://NoobosaurusBlog.github.io/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/cheat-sheets/" title="Cheat Sheets">
+                    <span>Cheat Sheets</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/tools/" title="Tools">
+                    <span>Tools</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Fuzzing
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ffuf
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>FFUF (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.
+Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ Examples # Filter responses with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -u https://target_url/ -H &#34;Host: FUZZ&#34; -fs 4242 # Filter responses with a 401 status code ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 # Filter 401 responses and fuzz passwords in a POST request ffuf -w /path/to/postdata.txt -X POST -d &#34;username=admin\&amp;password=FUZZ&#34; -u https://target_url/login.php -fc 401 Common Flags -c: Enable colorized output. -maxtime: Set the maximum runtime for the process in seconds. -p: Set a delay between requests (e.g., 0.1 seconds). -v: Verbose output. -t: Number of threads (default is 40). -mc: Match specific HTTP status codes (e.g., 200, 301, 403, or all). -fc: Filter out responses by HTTP status codes. -w: Specify the wordlist path. -u: Define the target URL. -s: Enable silent mode. -recursion: Enable recursive fuzzing. -r: Follow redirects. -o: Output results to a file. -of: Specify output format (e.g., json, html, csv, all). -b: Include cookies in the request. Examples # Match all responses, filter 42-byte answers, output colored and verbose ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v # Fuzz host headers and show only status 200 responses ffuf -w hosts.txt -u https://example.org/ -H &#34;Host: FUZZ&#34; -mc 200 # Fuzz the `name` field in a POST request with JSON data, filter responses containing &#34;error&#34; ffuf -w entries.txt -u https://example.org/ -X POST -H &#34;Content-Type: application/json&#34; \ -d &#39;{&#34;name&#34;: &#34;FUZZ&#34;, &#34;anotherkey&#34;: &#34;anothervalue&#34;}&#39; -fr &#34;error&#34; # Use two wordlists for parameter and value fuzzing, match responses containing &#34;VAL&#34; ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr &#34;VAL&#34; -c Tips and Tricks Interactive Mode: Press Enter while FFUF is running to access interactive features, such as reconfiguring filters or saving the state. Multiple Payloads: Use the FUZZ keyword multiple times in a URL (e.g., https://example.org/path/FUZZ/another_path/FUZZ). Variables in URLs: Specify payload locations using variables (e.g., https://example.org/path/{var1}/another_path/{var2}). </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to ffuf" href="https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://NoobosaurusBlog.github.io/">Nooblogaurus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

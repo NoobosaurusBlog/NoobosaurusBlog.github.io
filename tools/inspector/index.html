@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>InspecTor | Nooblogaurus</title>
+<meta name="keywords" content="tools, tor">
+<meta name="description" content="InspecTor: A Streamlined Tool for Website Metadata Extraction
+Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.">
+<meta name="author" content="">
+<link rel="canonical" href="https://NoobosaurusBlog.github.io/tools/inspector/">
+<link crossorigin="anonymous" href="https://NoobosaurusBlog.github.io/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://NoobosaurusBlog.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://NoobosaurusBlog.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://NoobosaurusBlog.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://NoobosaurusBlog.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://NoobosaurusBlog.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://NoobosaurusBlog.github.io/tools/inspector/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://NoobosaurusBlog.github.io/tools/inspector/">
+  <meta property="og:site_name" content="Nooblogaurus">
+  <meta property="og:title" content="InspecTor">
+  <meta property="og:description" content="InspecTor: A Streamlined Tool for Website Metadata Extraction Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tools">
+    <meta property="article:published_time" content="2024-12-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-16T00:00:00+00:00">
+    <meta property="article:tag" content="Tools">
+    <meta property="article:tag" content="Tor">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InspecTor">
+<meta name="twitter:description" content="InspecTor: A Streamlined Tool for Website Metadata Extraction
+Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Tools",
+      "item": "https://NoobosaurusBlog.github.io/tools/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "InspecTor",
+      "item": "https://NoobosaurusBlog.github.io/tools/inspector/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "InspecTor",
+  "name": "InspecTor",
+  "description": "InspecTor: A Streamlined Tool for Website Metadata Extraction Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.\n",
+  "keywords": [
+    "tools", "tor"
+  ],
+  "articleBody": "InspecTor: A Streamlined Tool for Website Metadata Extraction Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.\nTo clarify, I’m not a professional developer, just someone who needed a functional solution when existing tools fell short. Most scrapers I tried either broke on .onion domains or failed to process JavaScript-heavy pages. I created InspecTor to extract emails, links, images, and other relevant data without exposing my IP address. While it’s not perfect, it works and might save you some headaches too.\nWhat Makes InspecTor Stand Out? InspecTor focuses on three core capabilities:\nMetadata Extraction: It retrieves emails, phone numbers, links, images, and other exposed data from websites. Tor Support: Requests are routed through the Tor network, enabling anonymous access to .onion domains and privacy-sensitive sites. Dynamic Content Handling: By leveraging Selenium, InspecTor processes JavaScript-heavy pages that traditional scrapers typically ignore. Combined with multithreading for concurrent URL processing, InspecTor offers an efficient way to gather metadata while avoiding flags or blocks.\nKey Features Anonymous Scraping: Routes all requests through the Tor network for IP anonymity and seamless .onion domain access. Dynamic Content Support: Processes JavaScript-dependent pages using Selenium. Targeted Metadata Extraction: Retrieve specific fields like emails, phone numbers, images, and links. Concurrent Processing: Multithreading allows simultaneous scraping of multiple URLs for improved speed. Flexible Output Formats: Export results to JSON, SQLite, or human-readable formats. Configurable Options: Adjust threading, output fields, SSL verification, and more. Setting Up InspecTor 1. Clone the Repository git clone https://github.com/noobosaurus-r3x/InspecTor.git cd InspecTor 2. Install Dependencies pip install -r requirements.txt 3. Install Tor Ensure Tor is installed and running to route requests.\nsudo apt update sudo apt install tor sudo systemctl start tor 4. Set Up Selenium (Optional for Dynamic Content) Install Chrome and ChromeDriver. Ensure ChromeDriver matches your browser version.\nUsing InspecTor Extract Metadata from Specific URLs Provide single or multiple URLs:\npython3 InspecTor.py -u https://example.com https://example.onion Process a File of URLs Input a list of targets from a file:\npython3 InspecTor.py -f urls.txt Force Tor for All Traffic Route all requests through Tor, even for non-.onion domains:\npython3 InspecTor.py -u https://example.com --force-tor Save Results to JSON or SQLite Export metadata to a file or database:\npython3 InspecTor.py -u https://example.onion -o metadata.json python3 InspecTor.py -u https://example.onion --database metadata.db Extract Specific Fields Focus on targeted data:\npython3 InspecTor.py -u https://example.onion --fields emails links -o contact_info.json Handle JavaScript Content Enable Selenium for scraping JavaScript-dependent pages:\npython3 InspecTor.py -u https://example.onion --use-selenium Example Commands Extract everything: python3 InspecTor.py -u https://example.onion --extract-all -o all_metadata.json Grab emails and phone numbers: python3 InspecTor.py -u https://example.com --fields emails phone_numbers -o contact_info.json Ignore SSL certificate issues: python3 InspecTor.py -u https://example.onion --no-verify-ssl --human-readable Output Formats JSON: Structured file output for further processing. SQLite: Database storage for querying and analysis. Human-Readable: Clean, formatted text output for quick reviews. Notes on Tor and Dynamic Content Tor Requirements: Tor must be running on 127.0.0.1:9050. Selenium Setup: Ensure Chrome and ChromeDriver versions match for dynamic content scraping. SSL Verification: Enabled by default; use --no-verify-ssl to bypass invalid certificates. Threading: Control parallel processing with --max-workers for faster scraping. Why I Built InspecTor InspecTor was born out of necessity. Existing tools often fell short when handling .onion domains or JavaScript-heavy pages. As someone who needed a simple and effective way to extract metadata for OSINT investigations, website audits, and cybersecurity research, I created InspecTor.\nIt’s not perfect, but it works. If it helps you solve a problem, that’s great. If you find ways to improve it, even better.\n–\n",
+  "wordCount" : "634",
+  "inLanguage": "en",
+  "datePublished": "2024-12-16T00:00:00Z",
+  "dateModified": "2024-12-16T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://NoobosaurusBlog.github.io/tools/inspector/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nooblogaurus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://NoobosaurusBlog.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://NoobosaurusBlog.github.io/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/cheat-sheets/" title="Cheat Sheets">
+                    <span>Cheat Sheets</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/tools/" title="Tools">
+                    <span>Tools</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://NoobosaurusBlog.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      InspecTor
+    </h1>
+    <div class="post-meta"><span title='2024-12-16 00:00:00 +0000 UTC'>December 16, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="inspector-a-streamlined-tool-for-website-metadata-extraction">InspecTor: A Streamlined Tool for Website Metadata Extraction<a hidden class="anchor" aria-hidden="true" href="#inspector-a-streamlined-tool-for-website-metadata-extraction">#</a></h2>
+<p>Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.</p>
+<p>To clarify, I’m not a professional developer, just someone who needed a functional solution when existing tools fell short. Most scrapers I tried either broke on .onion domains or failed to process JavaScript-heavy pages. I created InspecTor to extract emails, links, images, and other relevant data without exposing my IP address. While it’s not perfect, it works and might save you some headaches too.</p>
+<hr>
+<h3 id="what-makes-inspector-stand-out">What Makes InspecTor Stand Out?<a hidden class="anchor" aria-hidden="true" href="#what-makes-inspector-stand-out">#</a></h3>
+<p>InspecTor focuses on three core capabilities:</p>
+<ol>
+<li><strong>Metadata Extraction</strong>: It retrieves emails, phone numbers, links, images, and other exposed data from websites.</li>
+<li><strong>Tor Support</strong>: Requests are routed through the Tor network, enabling anonymous access to .onion domains and privacy-sensitive sites.</li>
+<li><strong>Dynamic Content Handling</strong>: By leveraging Selenium, InspecTor processes JavaScript-heavy pages that traditional scrapers typically ignore.</li>
+</ol>
+<p>Combined with multithreading for concurrent URL processing, InspecTor offers an efficient way to gather metadata while avoiding flags or blocks.</p>
+<hr>
+<h3 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h3>
+<ul>
+<li><strong>Anonymous Scraping</strong>: Routes all requests through the Tor network for IP anonymity and seamless .onion domain access.</li>
+<li><strong>Dynamic Content Support</strong>: Processes JavaScript-dependent pages using Selenium.</li>
+<li><strong>Targeted Metadata Extraction</strong>: Retrieve specific fields like emails, phone numbers, images, and links.</li>
+<li><strong>Concurrent Processing</strong>: Multithreading allows simultaneous scraping of multiple URLs for improved speed.</li>
+<li><strong>Flexible Output Formats</strong>: Export results to JSON, SQLite, or human-readable formats.</li>
+<li><strong>Configurable Options</strong>: Adjust threading, output fields, SSL verification, and more.</li>
+</ul>
+<hr>
+<h3 id="setting-up-inspector">Setting Up InspecTor<a hidden class="anchor" aria-hidden="true" href="#setting-up-inspector">#</a></h3>
+<h4 id="1-clone-the-repository">1. Clone the Repository<a hidden class="anchor" aria-hidden="true" href="#1-clone-the-repository">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/noobosaurus-r3x/InspecTor.git
+</span></span><span style="display:flex;"><span>cd InspecTor
+</span></span></code></pre></div><h4 id="2-install-dependencies">2. Install Dependencies<a hidden class="anchor" aria-hidden="true" href="#2-install-dependencies">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt
+</span></span></code></pre></div><h4 id="3-install-tor">3. Install Tor<a hidden class="anchor" aria-hidden="true" href="#3-install-tor">#</a></h4>
+<p>Ensure Tor is installed and running to route requests.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install tor
+</span></span><span style="display:flex;"><span>sudo systemctl start tor
+</span></span></code></pre></div><h4 id="4-set-up-selenium-optional-for-dynamic-content">4. Set Up Selenium (Optional for Dynamic Content)<a hidden class="anchor" aria-hidden="true" href="#4-set-up-selenium-optional-for-dynamic-content">#</a></h4>
+<p>Install Chrome and ChromeDriver. Ensure ChromeDriver matches your browser version.</p>
+<hr>
+<h3 id="using-inspector">Using InspecTor<a hidden class="anchor" aria-hidden="true" href="#using-inspector">#</a></h3>
+<h4 id="extract-metadata-from-specific-urls">Extract Metadata from Specific URLs<a hidden class="anchor" aria-hidden="true" href="#extract-metadata-from-specific-urls">#</a></h4>
+<p>Provide single or multiple URLs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.com https://example.onion
+</span></span></code></pre></div><h4 id="process-a-file-of-urls">Process a File of URLs<a hidden class="anchor" aria-hidden="true" href="#process-a-file-of-urls">#</a></h4>
+<p>Input a list of targets from a file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -f urls.txt
+</span></span></code></pre></div><h4 id="force-tor-for-all-traffic">Force Tor for All Traffic<a hidden class="anchor" aria-hidden="true" href="#force-tor-for-all-traffic">#</a></h4>
+<p>Route all requests through Tor, even for non-.onion domains:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.com --force-tor
+</span></span></code></pre></div><h4 id="save-results-to-json-or-sqlite">Save Results to JSON or SQLite<a hidden class="anchor" aria-hidden="true" href="#save-results-to-json-or-sqlite">#</a></h4>
+<p>Export metadata to a file or database:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion -o metadata.json
+</span></span><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion --database metadata.db
+</span></span></code></pre></div><h4 id="extract-specific-fields">Extract Specific Fields<a hidden class="anchor" aria-hidden="true" href="#extract-specific-fields">#</a></h4>
+<p>Focus on targeted data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion --fields emails links -o contact_info.json
+</span></span></code></pre></div><h4 id="handle-javascript-content">Handle JavaScript Content<a hidden class="anchor" aria-hidden="true" href="#handle-javascript-content">#</a></h4>
+<p>Enable Selenium for scraping JavaScript-dependent pages:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion --use-selenium
+</span></span></code></pre></div><h4 id="example-commands">Example Commands<a hidden class="anchor" aria-hidden="true" href="#example-commands">#</a></h4>
+<ul>
+<li>Extract everything:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion --extract-all -o all_metadata.json
+</span></span></code></pre></div></li>
+<li>Grab emails and phone numbers:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.com --fields emails phone_numbers -o contact_info.json
+</span></span></code></pre></div></li>
+<li>Ignore SSL certificate issues:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 InspecTor.py -u https://example.onion --no-verify-ssl --human-readable
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="output-formats">Output Formats<a hidden class="anchor" aria-hidden="true" href="#output-formats">#</a></h3>
+<ul>
+<li><strong>JSON</strong>: Structured file output for further processing.</li>
+<li><strong>SQLite</strong>: Database storage for querying and analysis.</li>
+<li><strong>Human-Readable</strong>: Clean, formatted text output for quick reviews.</li>
+</ul>
+<hr>
+<h3 id="notes-on-tor-and-dynamic-content">Notes on Tor and Dynamic Content<a hidden class="anchor" aria-hidden="true" href="#notes-on-tor-and-dynamic-content">#</a></h3>
+<ul>
+<li><strong>Tor Requirements</strong>: Tor must be running on <code>127.0.0.1:9050</code>.</li>
+<li><strong>Selenium Setup</strong>: Ensure Chrome and ChromeDriver versions match for dynamic content scraping.</li>
+<li><strong>SSL Verification</strong>: Enabled by default; use <code>--no-verify-ssl</code> to bypass invalid certificates.</li>
+<li><strong>Threading</strong>: Control parallel processing with <code>--max-workers</code> for faster scraping.</li>
+</ul>
+<hr>
+<h3 id="why-i-built-inspector">Why I Built InspecTor<a hidden class="anchor" aria-hidden="true" href="#why-i-built-inspector">#</a></h3>
+<p>InspecTor was born out of necessity. Existing tools often fell short when handling .onion domains or JavaScript-heavy pages. As someone who needed a simple and effective way to extract metadata for OSINT investigations, website audits, and cybersecurity research, I created InspecTor.</p>
+<p>It’s not perfect, but it works. If it helps you solve a problem, that’s great. If you find ways to improve it, even better.</p>
+<p>&ndash;</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://NoobosaurusBlog.github.io/tags/tools/">Tools</a></li>
+      <li><a href="https://NoobosaurusBlog.github.io/tags/tor/">Tor</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://NoobosaurusBlog.github.io/">Nooblogaurus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
