@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>MITM Attacks | Nooblogaurus</title>
+<meta name="keywords" content="articles, mitm">
+<meta name="description" content="MITM Attacks: How to Crash the Party Between Alice and Bob
+Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, “Don’t mind me.” Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes tweaking what’s being said.
+Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.">
+<meta name="author" content="">
+<link rel="canonical" href="https://nooblogaurus.com/articles/mitm_crash_a_party/">
+<link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nooblogaurus.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nooblogaurus.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nooblogaurus.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nooblogaurus.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nooblogaurus.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/articles/mitm_crash_a_party/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://nooblogaurus.com/articles/mitm_crash_a_party/">
+  <meta property="og:site_name" content="Nooblogaurus">
+  <meta property="og:title" content="MITM Attacks">
+  <meta property="og:description" content="MITM Attacks: How to Crash the Party Between Alice and Bob Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, “Don’t mind me.” Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes tweaking what’s being said.
+Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="articles">
+    <meta property="article:published_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:tag" content="Articles">
+    <meta property="article:tag" content="Mitm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MITM Attacks">
+<meta name="twitter:description" content="MITM Attacks: How to Crash the Party Between Alice and Bob
+Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, “Don’t mind me.” Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes tweaking what’s being said.
+Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Articles",
+      "item": "https://nooblogaurus.com/articles/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "MITM Attacks",
+      "item": "https://nooblogaurus.com/articles/mitm_crash_a_party/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MITM Attacks",
+  "name": "MITM Attacks",
+  "description": "MITM Attacks: How to Crash the Party Between Alice and Bob Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, “Don’t mind me.” Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes tweaking what’s being said.\nToday, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.\n",
+  "keywords": [
+    "articles", "mitm"
+  ],
+  "articleBody": "MITM Attacks: How to Crash the Party Between Alice and Bob Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, “Don’t mind me.” Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes tweaking what’s being said.\nToday, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.\nWhat Even Is a Man-in-the-Middle Attack? Picture this: Alice and Bob are exchanging secrets—love letters, memes, bank details, or maybe just complaining about Carol. They think they’re communicating directly, but little do they know, Carol is sitting in the middle, reading every word, tweaking the conversation, and cackling like a villain in a bad spy movie.\nIn the digital world, Alice could be your laptop, Bob a website or server, and Carol a hacker lurking on your café’s Wi-Fi or corporate network. She intercepts traffic, decrypts it (sometimes), and messes with it however she pleases.\nThe terrifying part? This can happen to you without you realizing it, until it’s too late.\nHow Carol Crashes the Party: Common MITM Tricks Carol’s bag of tricks is stuffed with clever (and sometimes shockingly simple) ways to hijack your traffic. Here’s how she pulls it off:\n1. Rogue Wi-Fi Access Points: Carol’s Favorite Honeytrap Setting up a rogue Wi-Fi access point doesn’t require much more than a laptop, a coffee shop corner, and a catchy SSID like Free_Cafe_WiFi or Starbux_Free. You think you’re connecting to free Wi-Fi for your overpriced latte, but you’re actually walking straight into Carol’s trap.\nHow It Works (The Tech Bit): Broadcast the Trap: Carol uses tools like Airbase-ng to create a fake access point. airbase-ng -e \"Starbux_Guest\" -c 6 wlan0mon Monitor the Victims: Your device connects, trusting the familiar name. Carol now acts as the gateway to the internet. Proxy the Traffic: With tools like ettercap or mitmproxy, Carol routes all your traffic through her machine. She can sniff, modify, or inject malware at will. bettercap -T -q -M arp:remote // // -i wlan0 Optional Evil Fun: Carol can inject JavaScript keyloggers, replace downloads with malware, or redirect DNS queries to phishing pages. Why It’s Effective Devices love auto-connecting to networks they recognize, and humans… well, we love free Wi-Fi.\nDefense Tip: Always use a VPN. It wraps your data in encryption, making Carol’s snooping session as useful as watching a scrambled TV channel from the 90s.\n2. ARP Spoofing: “Hi, I’m the Router Now” ARP (Address Resolution Protocol) is like the phonebook for local networks, mapping IP addresses to MAC addresses. But ARP has a fatal flaw: it trusts everyone. Carol exploits this blind trust to impersonate the router and redirect all traffic through herself.\nHow It Works: Carol tells the router: “Hey, I’m Alice.” Carol tells Alice: “Hey, I’m the router.” Traffic meant for Alice or the router now flows through Carol. arpspoof -i eth0 -t 192.168.1.10 -r 192.168.1.1 Why It’s Effective On a LAN, ARP spoofing is lightning-fast and stealthy. Carol can:\nSniff unencrypted traffic with Wireshark. Modify requests in real time. Drop packets because chaos is fun. The Tell: On compromised machines, running arp -a often exposes duplicate MAC addresses, a sign Carol’s in the mix.\nDefense Tip: Use ARP detection tools like Arpwatch or enable Dynamic ARP Inspection (DAI) on managed switches.\n3. DNS Spoofing: Carol’s Redirection Magic You type bank.com into your browser. Carol decides that’s cute and redirects you to fak3bank.com, a malicious clone where she harvests your login details.\nHow It Works: Carol intercepts DNS requests (via tools like tcpdump): tcpdump -i eth0 udp port 53 She injects a fake DNS response faster than the real DNS server: dnsspoof -i eth0 -f dns_hosts Example dns_hosts file:\n133.7.133.7 google.com You land on Carol’s server, which looks real enough for you to log in like a good, oblivious citizen. Defense Tip: Use DNSSEC to validate DNS responses and encrypt queries with DNS-over-HTTPS (DoH).\n4. SSL Stripping: Downgrading You Back to 2005 You know HTTPS—the comforting padlock in your browser bar? Carol strips it away like a magician revealing a trapdoor.\nHow It Works: You type https://example.com. Carol intercepts and strips the HTTPS headers, forcing a plain old HTTP connection. Everything—passwords, credit card info, embarrassing searches—travels unencrypted. bettercap -iface eth0 -caplet https-ui Defense Tip: Use HSTS (HTTP Strict Transport Security) and browser extensions like HTTPS Everywhere.\nFinal Thoughts: How to Keep Carol Out MITM attacks exploit trust—trust in open networks, unverified certificates, or unsecured protocols. But with a few defenses, you can kick Carol out of the party:\nAlways use a VPN. Enable HSTS, DNSSEC, and encrypted DNS. Inspect SSL certificates. Watch for anomalies: duplicate MAC addresses, suspicious DNS redirects, or missing HTTPS. In short: trust no one, especially not the Wi-Fi named Free_Cafe_WiFi. Carol’s out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction. ",
+  "wordCount" : "851",
+  "inLanguage": "en",
+  "datePublished": "2024-12-17T00:00:00Z",
+  "dateModified": "2024-12-17T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nooblogaurus.com/articles/mitm_crash_a_party/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nooblogaurus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nooblogaurus.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nooblogaurus.com/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://nooblogaurus.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/cheat-sheets/" title="Cheat Sheets">
+                    <span>Cheat Sheets</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/tools/" title="Tools">
+                    <span>Tools</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      MITM Attacks
+    </h1>
+    <div class="post-meta"><span title='2024-12-17 00:00:00 +0000 UTC'>December 17, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="mitm-attacks-how-to-crash-the-party-between-alice-and-bob">MITM Attacks: How to Crash the Party Between Alice and Bob<a hidden class="anchor" aria-hidden="true" href="#mitm-attacks-how-to-crash-the-party-between-alice-and-bob">#</a></h1>
+<p>Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, <em>“Don’t mind me.”</em> Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol, the uninvited hacker, isn’t just listening; she’s reading, stealing, and sometimes <em>tweaking</em> what’s being said.</p>
+<p>Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.</p>
+<hr>
+<h2 id="what-even-is-a-man-in-the-middle-attack">What Even Is a Man-in-the-Middle Attack?<a hidden class="anchor" aria-hidden="true" href="#what-even-is-a-man-in-the-middle-attack">#</a></h2>
+<p>Picture this: Alice and Bob are exchanging secrets—love letters, memes, bank details, or maybe just complaining about Carol. They think they’re communicating directly, but little do they know, Carol is sitting in the middle, reading every word, tweaking the conversation, and cackling like a villain in a bad spy movie.</p>
+<p>In the digital world, Alice could be your laptop, Bob a website or server, and Carol a hacker lurking on your café’s Wi-Fi or corporate network. She intercepts traffic, decrypts it (sometimes), and messes with it however she pleases.</p>
+<p>The terrifying part? This can happen to you without you realizing it, until it’s too late.</p>
+<hr>
+<h2 id="how-carol-crashes-the-party-common-mitm-tricks">How Carol Crashes the Party: Common MITM Tricks<a hidden class="anchor" aria-hidden="true" href="#how-carol-crashes-the-party-common-mitm-tricks">#</a></h2>
+<p>Carol’s bag of tricks is stuffed with clever (and sometimes shockingly simple) ways to hijack your traffic. Here’s how she pulls it off:</p>
+<hr>
+<h3 id="1-rogue-wi-fi-access-points-carols-favorite-honeytrap">1. Rogue Wi-Fi Access Points: Carol’s Favorite Honeytrap<a hidden class="anchor" aria-hidden="true" href="#1-rogue-wi-fi-access-points-carols-favorite-honeytrap">#</a></h3>
+<p>Setting up a rogue Wi-Fi access point doesn’t require much more than a laptop, a coffee shop corner, and a catchy SSID like <em>Free_Cafe_WiFi</em> or <em>Starbux_Free</em>. You think you’re connecting to free Wi-Fi for your overpriced latte, but you’re actually walking straight into Carol’s trap.</p>
+<h4 id="how-it-works-the-tech-bit">How It Works (The Tech Bit):<a hidden class="anchor" aria-hidden="true" href="#how-it-works-the-tech-bit">#</a></h4>
+<ol>
+<li><strong>Broadcast the Trap:</strong> Carol uses tools like Airbase-ng to create a fake access point.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>airbase-ng -e <span style="color:#e6db74">&#34;Starbux_Guest&#34;</span> -c <span style="color:#ae81ff">6</span> wlan0mon
+</span></span></code></pre></div><ol start="2">
+<li><strong>Monitor the Victims:</strong> Your device connects, trusting the familiar name. Carol now acts as the gateway to the internet.</li>
+<li><strong>Proxy the Traffic:</strong> With tools like <strong>ettercap</strong> or <strong>mitmproxy</strong>, Carol routes all your traffic through her machine. She can sniff, modify, or inject malware at will.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bettercap -T -q -M arp:remote // // -i wlan0
+</span></span></code></pre></div><ol start="4">
+<li><strong>Optional Evil Fun:</strong> Carol can inject JavaScript keyloggers, replace downloads with malware, or redirect DNS queries to phishing pages.</li>
+</ol>
+<h4 id="why-its-effective">Why It’s Effective<a hidden class="anchor" aria-hidden="true" href="#why-its-effective">#</a></h4>
+<p>Devices love auto-connecting to networks they recognize, and humans… well, we love free Wi-Fi.</p>
+<p><strong>Defense Tip:</strong> Always use a VPN. It wraps your data in encryption, making Carol’s snooping session as useful as watching a scrambled TV channel from the 90s.</p>
+<hr>
+<h3 id="2-arp-spoofing-hi-im-the-router-now">2. ARP Spoofing: “Hi, I’m the Router Now”<a hidden class="anchor" aria-hidden="true" href="#2-arp-spoofing-hi-im-the-router-now">#</a></h3>
+<p>ARP (Address Resolution Protocol) is like the phonebook for local networks, mapping IP addresses to MAC addresses. But ARP has a fatal flaw: it trusts <em>everyone</em>. Carol exploits this blind trust to impersonate the router and redirect all traffic through herself.</p>
+<h4 id="how-it-works">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works">#</a></h4>
+<ol>
+<li>Carol tells the router: <em>“Hey, I’m Alice.”</em></li>
+<li>Carol tells Alice: <em>“Hey, I’m the router.”</em></li>
+<li>Traffic meant for Alice or the router now flows through Carol.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>arpspoof -i eth0 -t 192.168.1.10 -r 192.168.1.1
+</span></span></code></pre></div><h4 id="why-its-effective-1">Why It’s Effective<a hidden class="anchor" aria-hidden="true" href="#why-its-effective-1">#</a></h4>
+<p>On a LAN, ARP spoofing is lightning-fast and stealthy. Carol can:</p>
+<ul>
+<li>Sniff unencrypted traffic with Wireshark.</li>
+<li>Modify requests in real time.</li>
+<li>Drop packets because chaos is fun.</li>
+</ul>
+<p><strong>The Tell:</strong> On compromised machines, running <code>arp -a</code> often exposes duplicate MAC addresses, a sign Carol’s in the mix.</p>
+<p><strong>Defense Tip:</strong> Use ARP detection tools like <strong>Arpwatch</strong> or enable Dynamic ARP Inspection (DAI) on managed switches.</p>
+<hr>
+<h3 id="3-dns-spoofing-carols-redirection-magic">3. DNS Spoofing: Carol’s Redirection Magic<a hidden class="anchor" aria-hidden="true" href="#3-dns-spoofing-carols-redirection-magic">#</a></h3>
+<p>You type <code>bank.com</code> into your browser. Carol decides that’s cute and redirects you to <em>fak3bank.com</em>, a malicious clone where she harvests your login details.</p>
+<h4 id="how-it-works-1">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works-1">#</a></h4>
+<ol>
+<li>Carol intercepts DNS requests (via tools like <code>tcpdump</code>):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tcpdump -i eth0 udp port <span style="color:#ae81ff">53</span>
+</span></span></code></pre></div><ol start="2">
+<li>She injects a fake DNS response faster than the real DNS server:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnsspoof -i eth0 -f dns_hosts
+</span></span></code></pre></div><p>Example <code>dns_hosts</code> file:</p>
+<pre tabindex="0"><code>133.7.133.7 google.com
+</code></pre><ol start="3">
+<li>You land on Carol’s server, which looks real enough for you to log in like a good, oblivious citizen.</li>
+</ol>
+<p><strong>Defense Tip:</strong> Use DNSSEC to validate DNS responses and encrypt queries with <strong>DNS-over-HTTPS (DoH)</strong>.</p>
+<hr>
+<h3 id="4-ssl-stripping-downgrading-you-back-to-2005">4. SSL Stripping: Downgrading You Back to 2005<a hidden class="anchor" aria-hidden="true" href="#4-ssl-stripping-downgrading-you-back-to-2005">#</a></h3>
+<p>You know HTTPS—the comforting padlock in your browser bar? Carol strips it away like a magician revealing a trapdoor.</p>
+<h4 id="how-it-works-2">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works-2">#</a></h4>
+<ol>
+<li>You type <code>https://example.com</code>.</li>
+<li>Carol intercepts and strips the HTTPS headers, forcing a plain old HTTP connection.</li>
+<li>Everything—passwords, credit card info, embarrassing searches—travels unencrypted.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bettercap -iface eth0 -caplet https-ui
+</span></span></code></pre></div><p><strong>Defense Tip:</strong> Use HSTS (HTTP Strict Transport Security) and browser extensions like <strong>HTTPS Everywhere</strong>.</p>
+<hr>
+<h2 id="final-thoughts-how-to-keep-carol-out">Final Thoughts: How to Keep Carol Out<a hidden class="anchor" aria-hidden="true" href="#final-thoughts-how-to-keep-carol-out">#</a></h2>
+<p>MITM attacks exploit trust—trust in open networks, unverified certificates, or unsecured protocols. But with a few defenses, you can kick Carol out of the party:</p>
+<ul>
+<li>Always use a VPN.</li>
+<li>Enable HSTS, DNSSEC, and encrypted DNS.</li>
+<li>Inspect SSL certificates.</li>
+<li>Watch for anomalies: duplicate MAC addresses, suspicious DNS redirects, or missing HTTPS.</li>
+</ul>
+<h2 id="in-short-trust-no-one-especially-not-the-wi-fi-named-free_cafe_wifi-carols-out-there-latte-in-hand-waiting-for-you-to-slip-up-dont-give-her-the-satisfaction">In short: <em>trust no one</em>, especially not the Wi-Fi named <em>Free_Cafe_WiFi</em>. Carol’s out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction.<a hidden class="anchor" aria-hidden="true" href="#in-short-trust-no-one-especially-not-the-wi-fi-named-free_cafe_wifi-carols-out-there-latte-in-hand-waiting-for-you-to-slip-up-dont-give-her-the-satisfaction">#</a></h2>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://nooblogaurus.com/tags/articles/">Articles</a></li>
+      <li><a href="https://nooblogaurus.com/tags/mitm/">Mitm</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Webpage Infos Extractor | Nooblogaurus</title>
+<meta name="keywords" content="tools, script">
+<meta name="description" content="When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. Webpage Infos Extractor is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.
+Why Build This?
+Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.">
+<meta name="author" content="">
+<link rel="canonical" href="https://nooblogaurus.com/tools/webpage_infos_extractor/">
+<link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nooblogaurus.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nooblogaurus.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nooblogaurus.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nooblogaurus.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nooblogaurus.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/tools/webpage_infos_extractor/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://nooblogaurus.com/tools/webpage_infos_extractor/">
+  <meta property="og:site_name" content="Nooblogaurus">
+  <meta property="og:title" content="Webpage Infos Extractor">
+  <meta property="og:description" content="When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. Webpage Infos Extractor is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.
+Why Build This? Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tools">
+    <meta property="article:published_time" content="2024-12-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-15T00:00:00+00:00">
+    <meta property="article:tag" content="Tools">
+    <meta property="article:tag" content="Script">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Webpage Infos Extractor">
+<meta name="twitter:description" content="When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. Webpage Infos Extractor is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.
+Why Build This?
+Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Tools",
+      "item": "https://nooblogaurus.com/tools/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Webpage Infos Extractor",
+      "item": "https://nooblogaurus.com/tools/webpage_infos_extractor/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Webpage Infos Extractor",
+  "name": "Webpage Infos Extractor",
+  "description": "When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. Webpage Infos Extractor is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.\nWhy Build This? Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.\n",
+  "keywords": [
+    "tools", "script"
+  ],
+  "articleBody": "When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. Webpage Infos Extractor is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.\nWhy Build This? Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.\nWhat Does It Do? Once activated, the bookmarklet scans the current webpage and extracts:\nForms: Shows details like form actions, methods, and input elements.\nLinks: Lists all hyperlinks found on the page.\nImages: Displays all images in an easy-to-view layout.\nWord Count: Calculates the total number of words in the page’s text content.\nThe results are neatly presented in a new browser window with clean formatting, so you can analyze everything at a glance.\nInstallation Setting it up is simple. Here’s how:\nOpen your web browser and create a new bookmark.\nEdit the bookmark’s URL field and paste the following JavaScript code:\njavascript:(function(){var forms=document.getElementsByTagName('form');var links=document.getElementsByTagName('a');var images=document.getElementsByTagName('img');var bodyText=document.body.innerText;var wordCount=bodyText.split(/\\s+/).filter(function(word){return word.length\u003e0;}).length;var newWindow=window.open('','','width=800,height=600');newWindow.document.write('Extracted Data');newWindow.document.write('');newWindow.document.write('Forms:');for(var i=0;iForm '+(i+1)+'');newWindow.document.write('Action'+(form.action||'N/A')+'');newWindow.document.write('Method'+(form.method||'get')+'');newWindow.document.write('NameTypeValue');for(var j=0;j'+(element.name||'N/A')+''+(element.type||'N/A')+''+value+'')}newWindow.document.write('')}newWindow.document.write('Links:Link');for(var i=0;i",
+  "wordCount" : "497",
+  "inLanguage": "en",
+  "datePublished": "2024-12-15T00:00:00Z",
+  "dateModified": "2024-12-15T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nooblogaurus.com/tools/webpage_infos_extractor/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nooblogaurus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nooblogaurus.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nooblogaurus.com/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://nooblogaurus.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/cheat-sheets/" title="Cheat Sheets">
+                    <span>Cheat Sheets</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/tools/" title="Tools">
+                    <span>Tools</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/articles/" title="Articles">
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nooblogaurus.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Webpage Infos Extractor
+    </h1>
+    <div class="post-meta"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. <strong>Webpage Infos Extractor</strong> is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.</p>
+<h2 id="why-build-this">Why Build This?<a hidden class="anchor" aria-hidden="true" href="#why-build-this">#</a></h2>
+<p>Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.</p>
+<h2 id="what-does-it-do">What Does It Do?<a hidden class="anchor" aria-hidden="true" href="#what-does-it-do">#</a></h2>
+<p>Once activated, the bookmarklet scans the current webpage and extracts:</p>
+<ul>
+<li>
+<p><strong>Forms</strong>: Shows details like form actions, methods, and input elements.</p>
+</li>
+<li>
+<p><strong>Links</strong>: Lists all hyperlinks found on the page.</p>
+</li>
+<li>
+<p><strong>Images</strong>: Displays all images in an easy-to-view layout.</p>
+</li>
+<li>
+<p><strong>Word Count</strong>: Calculates the total number of words in the page’s text content.</p>
+</li>
+</ul>
+<p>The results are neatly presented in a new browser window with clean formatting, so you can analyze everything at a glance.</p>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<p>Setting it up is simple. Here’s how:</p>
+<ol>
+<li>
+<p>Open your web browser and create a new bookmark.</p>
+</li>
+<li>
+<p>Edit the bookmark’s URL field and paste the following JavaScript code:</p>
+<pre tabindex="0"><code>javascript:(function(){var forms=document.getElementsByTagName(&#39;form&#39;);var links=document.getElementsByTagName(&#39;a&#39;);var images=document.getElementsByTagName(&#39;img&#39;);var bodyText=document.body.innerText;var wordCount=bodyText.split(/\s+/).filter(function(word){return word.length&gt;0;}).length;var newWindow=window.open(&#39;&#39;,&#39;&#39;,&#39;width=800,height=600&#39;);newWindow.document.write(&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Extracted Data&lt;/title&gt;&#39;);newWindow.document.write(&#39;&lt;style&gt;body{font-family:Arial,sans-serif}table{width:100%;border-collapse:collapse;margin-bottom:20px}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background-color:#f2f2f2}tr:nth-child(even){background-color:#f9f9f9}h2{background-color:#4CAF50;color:white;padding:10px}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&#39;);newWindow.document.write(&#39;&lt;h2&gt;Forms:&lt;/h2&gt;&#39;);for(var i=0;i&lt;forms.length;i++){var form=forms[i];newWindow.document.write(&#39;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&#34;3&#34;&gt;Form &#39;+(i+1)+&#39;&lt;/th&gt;&lt;/tr&gt;&#39;);newWindow.document.write(&#39;&lt;tr&gt;&lt;td&gt;Action&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&#39;+(form.action||&#39;N/A&#39;)+&#39;&lt;/td&gt;&lt;/tr&gt;&#39;);newWindow.document.write(&#39;&lt;tr&gt;&lt;td&gt;Method&lt;/td&gt;&lt;td colspan=&#34;2&#34;&gt;&#39;+(form.method||&#39;get&#39;)+&#39;&lt;/td&gt;&lt;/tr&gt;&#39;);newWindow.document.write(&#39;&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;&#39;);for(var j=0;j&lt;form.elements.length;j++){var element=form.elements[j];var value=element.value||&#39;N/A&#39;;if(element.type===&#39;checkbox&#39;||element.type===&#39;radio&#39;){value=element.checked?&#39;on&#39;:&#39;off&#39;}newWindow.document.write(&#39;&lt;tr&gt;&lt;td&gt;&#39;+(element.name||&#39;N/A&#39;)+&#39;&lt;/td&gt;&lt;td&gt;&#39;+(element.type||&#39;N/A&#39;)+&#39;&lt;/td&gt;&lt;td&gt;&#39;+value+&#39;&lt;/td&gt;&lt;/tr&gt;&#39;)}newWindow.document.write(&#39;&lt;/table&gt;&#39;)}newWindow.document.write(&#39;&lt;h2&gt;Links:&lt;/h2&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Link&lt;/th&gt;&lt;/tr&gt;&#39;);for(var i=0;i&lt;links.length;i++){newWindow.document.write(&#39;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;&#39;+links[i].href+&#39;&#34; target=&#34;_blank&#34;&gt;&#39;+links[i].href+&#39;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&#39;)}newWindow.document.write(&#39;&lt;/table&gt;&#39;);newWindow.document.write(&#39;&lt;h2&gt;Images:&lt;/h2&gt;&#39;);for(var i=0;i&lt;images.length;i++){newWindow.document.write(&#39;&lt;img src=&#34;&#39;+images[i].src+&#39;&#34; style=&#34;max-width:100%;display:block;margin-bottom:10px;&#34;&gt;&#39;)}newWindow.document.write(&#39;&lt;h2&gt;Word Count:&lt;/h2&gt;&lt;p&gt;&#39;+wordCount+&#39; words&lt;/p&gt;&#39;);newWindow.document.write(&#39;&lt;/body&gt;&lt;/html&gt;&#39;);newWindow.document.close();})();
+</code></pre></li>
+<li>
+<p>Save the bookmark.</p>
+</li>
+</ol>
+<p>That’s it! You now have a bookmarklet ready to extract webpage info.</p>
+<h2 id="how-to-use">How to Use<a hidden class="anchor" aria-hidden="true" href="#how-to-use">#</a></h2>
+<ol>
+<li>
+<p>Navigate to the webpage you want to analyze.</p>
+</li>
+<li>
+<p>Click on the saved bookmarklet.</p>
+</li>
+<li>
+<p>A new window will pop up with the following details:</p>
+<ul>
+<li>
+<p><strong>Forms</strong>: Lists actions, methods, and input fields.</p>
+</li>
+<li>
+<p><strong>Links</strong>: Displays all hyperlinks found on the page.</p>
+</li>
+<li>
+<p><strong>Images</strong>: Previews all images on the page.</p>
+</li>
+<li>
+<p><strong>Word Count</strong>: Shows the total word count of the page’s text content.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="why-use-it">Why Use It?<a hidden class="anchor" aria-hidden="true" href="#why-use-it">#</a></h2>
+<p>This tool is perfect for:</p>
+<ul>
+<li>
+<p><strong>Web Developers</strong>: Debugging forms, analyzing links, or reviewing images for optimization.</p>
+</li>
+<li>
+<p><strong>Content Creators</strong>: Counting words or inspecting embedded media.</p>
+</li>
+<li>
+<p><strong>Researchers</strong>: Extracting links or analyzing page structures quickly.</p>
+</li>
+</ul>
+<p>It’s not trying to replace full-fledged tools like browser dev tools, but it’s great for quick insights without digging into a complex interface.</p>
+<h2 id="limitations">Limitations<a hidden class="anchor" aria-hidden="true" href="#limitations">#</a></h2>
+<p>This bookmarklet is lightweight and portable, but it’s not flawless. Here are a few things to keep in mind:</p>
+<ol>
+<li>
+<p><strong>Browser Compatibility</strong>: It works on most modern browsers but may struggle with certain page structures or dynamic content.</p>
+</li>
+<li>
+<p><strong>Static Analysis</strong>: It doesn’t execute JavaScript-heavy elements, so it’s best suited for simpler pages.</p>
+</li>
+<li>
+<p><strong>Basic Formatting</strong>: The output is clean but not customizable.</p>
+</li>
+</ol>
+<h2 id="final-thoughts">Final Thoughts<a hidden class="anchor" aria-hidden="true" href="#final-thoughts">#</a></h2>
+<p>The Webpage Infos Extractor isn’t revolutionary, but it’s incredibly handy. Whether you’re troubleshooting a webpage or casually analyzing content, this bookmarklet gives you the essentials at a click. Simple, portable, and effective (sometimes), that’s all you need. If you think of ways to enhance it, feel free to tweak the code and make it your own!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://nooblogaurus.com/tags/tools/">Tools</a></li>
+      <li><a href="https://nooblogaurus.com/tags/script/">Script</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
