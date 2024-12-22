@@ -30,7 +30,7 @@ sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10
 - **`-p-`**: Scan all 65,535 ports.
 - **`-sV`**: Detect services and versions running on the target.
 - **`-O`**: Detect the operating system.
-- **`-v`********\*\*\*\*, ********************************************`-vv`********************************************, \*\*\*\*************\*\*\*\*********`-vvv`**: Set verbosity levels.
+- **`-v`, `-vv`, `-vvv`**: Set verbosity levels.
 - **`--script vuln`**: Run vulnerability scripts.
 - **`--script vulners`**: Use vulners scripts for CVE-based scanning.
 - **`--script=http-enum`**: Act like Nikto to enumerate HTTP resources.

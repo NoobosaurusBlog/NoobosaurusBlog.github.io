@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cheat Sheets on Nooblogaurus</title>
-    <link>https://nooblogaurus.com/cheat-sheets/</link>
+    <link>http://localhost:1313/cheat-sheets/</link>
     <description>Recent content in Cheat Sheets on Nooblogaurus</description>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nooblogaurus.com/cheat-sheets/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/cheat-sheets/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffuf</title>
-      <link>https://nooblogaurus.com/cheat-sheets/ffuf/</link>
+      <link>http://localhost:1313/cheat-sheets/ffuf/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/ffuf/</guid>
+      <guid>http://localhost:1313/cheat-sheets/ffuf/</guid>
       <description>&lt;p&gt;&lt;strong&gt;FFUF&lt;/strong&gt; (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -c -w path/to/wordlist -u https://target_url/FUZZ
@@ -65,9 +65,9 @@
     </item>
     <item>
       <title>Hydra</title>
-      <link>https://nooblogaurus.com/cheat-sheets/hydra/</link>
+      <link>http://localhost:1313/cheat-sheets/hydra/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/hydra/</guid>
+      <guid>http://localhost:1313/cheat-sheets/hydra/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hydra&lt;/strong&gt; is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;IP&amp;gt; &amp;lt;protocol&amp;gt;
@@ -89,9 +89,9 @@
     </item>
     <item>
       <title>nmap</title>
-      <link>https://nooblogaurus.com/cheat-sheets/nmap/</link>
+      <link>http://localhost:1313/cheat-sheets/nmap/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/nmap/</guid>
+      <guid>http://localhost:1313/cheat-sheets/nmap/</guid>
       <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap &amp;lt;target IP&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sT -sS -Pn -v 10.10.10.10
@@ -139,9 +139,9 @@
     </item>
     <item>
       <title>Meterpreter</title>
-      <link>https://nooblogaurus.com/cheat-sheets/meterpreter/</link>
+      <link>http://localhost:1313/cheat-sheets/meterpreter/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/meterpreter/</guid>
+      <guid>http://localhost:1313/cheat-sheets/meterpreter/</guid>
       <description>&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 &lt;p&gt;Start with the essentials to get a lay of the land:&lt;/p&gt;
 &lt;ul&gt;
@@ -157,9 +157,9 @@
     </item>
     <item>
       <title>smbclient</title>
-      <link>https://nooblogaurus.com/cheat-sheets/smbclient/</link>
+      <link>http://localhost:1313/cheat-sheets/smbclient/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/smbclient/</guid>
+      <guid>http://localhost:1313/cheat-sheets/smbclient/</guid>
       <description>&lt;p&gt;&lt;strong&gt;smbclient&lt;/strong&gt; is a command-line tool that allows you to interact with SMB (Server Message Block) file shares. Whether you’re uploading files, listing directories, or troubleshooting network shares, this tool is your go-to for SMB.&lt;/p&gt;
 &lt;h2 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h2&gt;
 &lt;p&gt;To connect to an SMB file share, use the following syntax:&lt;/p&gt;
@@ -172,9 +172,9 @@
     </item>
     <item>
       <title>SMBMap</title>
-      <link>https://nooblogaurus.com/cheat-sheets/smbmap/</link>
+      <link>http://localhost:1313/cheat-sheets/smbmap/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://nooblogaurus.com/cheat-sheets/smbmap/</guid>
+      <guid>http://localhost:1313/cheat-sheets/smbmap/</guid>
       <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smbmap -u &amp;lt;username&amp;gt; -p &amp;lt;password&amp;gt; -H &amp;lt;host&amp;gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-usage-examples&#34;&gt;Common Usage Examples&lt;/h2&gt;
