@@ -3,6 +3,8 @@ date: 2024-12-17
 title: "MITM Attacks"
 tags: ["articles", "mitm"]
 ---
+
+
 # MITM Attacks: How to Crash the Party Between Alice and Bob
 
 Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, *“Don’t mind me.”* Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol (the uninvited hacker) isn’t just listening, she’s reading, stealing, and sometimes *tweaking* what’s being said.
@@ -40,7 +42,7 @@ airbase-ng -e "Starbux_Guest" -c 6 wlan0mon
 ```
 
 2. **Monitor the Victims:** Your device connects, trusting the familiar name. Carol now acts as the gateway to the internet.
-3. **Proxy the Traffic:** With tools like **ettercap** or **mitmproxy**, Carol routes all your traffic through her machine. She can sniff, modify, or inject malware at will.
+3. **Proxy the Traffic:** With tools like **ettercap** or **mitmproxy**, Carol routes all your traffic through her machine.
 
 ```bash
 bettercap -T -q -M arp:remote // // -i wlan0
@@ -52,7 +54,7 @@ bettercap -T -q -M arp:remote // // -i wlan0
 
 Devices love auto-connecting to networks they recognize, and humans… well, we love free Wi-Fi.
 
-**Defense Tip:** Always use a VPN. It wraps your data in encryption, making Carol’s snooping session as useful as watching a scrambled TV channel from the 90s.
+**Defense Tip:** Always use a VPN.
 
 ---
 
@@ -62,25 +64,15 @@ ARP (Address Resolution Protocol) is like the phonebook for local networks, mapp
 
 #### How It Works:
 
-1. Carol tells the router: *“Hey, I’m Alice.”*
-2. Carol tells Alice: *“Hey, I’m the router.”*
-3. Traffic meant for Alice or the router now flows through Carol.
-
 ```bash
 arpspoof -i eth0 -t 192.168.1.10 -r 192.168.1.1
 ```
 
 #### Why It’s Effective
 
-On a LAN, ARP spoofing is lightning-fast and stealthy. Carol can:
+On a LAN, ARP spoofing is lightning-fast and stealthy.
 
-- Sniff unencrypted traffic with Wireshark.
-- Modify requests in real time.
-- Drop packets because chaos is fun.
-
-**The Tell:** On compromised machines, running `arp -a` often exposes duplicate MAC addresses—a sign Carol’s in the mix.
-
-**Defense Tip:** Use ARP detection tools like **Arpwatch** or enable Dynamic ARP Inspection (DAI) on managed switches.
+**Defense Tip:** Use ARP detection tools like **Arpwatch**.
 
 ---
 
@@ -90,27 +82,17 @@ You type `bank.com` into your browser. Carol decides that’s cute and redirects
 
 #### How It Works:
 
-1. Carol intercepts DNS requests (via tools like `tcpdump`):
-
 ```bash
 tcpdump -i eth0 udp port 53
-```
-
-2. She injects a fake DNS response faster than the real DNS server:
-
-```bash
 dnsspoof -i eth0 -f dns_hosts
 ```
 
 Example `dns_hosts` file:
-
-```
+```text
 133.7.133.7 google.com
 ```
 
-3. You land on Carol’s server, which looks real enough for you to log in like a good, oblivious citizen.
-
-**Defense Tip:** Use DNSSEC to validate DNS responses and encrypt queries with **DNS-over-HTTPS (DoH)**.
+**Defense Tip:** Use DNSSEC.
 
 ---
 
@@ -120,26 +102,38 @@ You know HTTPS, the comforting padlock in your browser bar? Carol strips it away
 
 #### How It Works:
 
-1. You type `https://example.com`.
-2. Carol intercepts and strips the HTTPS headers, forcing a plain old HTTP connection.
-3. Everything—passwords, credit card info, embarrassing searches—travels unencrypted.
-
 ```bash
 bettercap -iface eth0 -caplet https-ui
 ```
 
-**Defense Tip:** Use HSTS (HTTP Strict Transport Security) and browser extensions like **HTTPS Everywhere**.
+**Defense Tip:** Use HSTS.
+
+---
+
+### 5. The Terrapin Attack: SSH Handshake Manipulation
+
+The Terrapin attack, disclosed in 2023, targets vulnerabilities in the SSH protocol. Carol, with her devilish grin, manipulates the sequence numbers during the SSH handshake, playing a twisted game of digital Jenga.
+
+#### How It Works:
+
+1. Carol intercepts and tampers with the SSH handshake sequence numbers.
+2. She forces a downgrade or disables security features like keystroke timing obfuscation.
+3. This allows her to potentially exfiltrate sensitive SSH session data.
+
+#### Why It’s Dangerous
+
+SSH is supposed to be secure by design, but Terrapin cracks open a weakness at a fundamental level, undermining trust in encrypted sessions.
+
+**Defense Tip:** Ensure SSH clients and servers are updated to versions patched against Terrapin vulnerabilities (e.g., OpenSSH 9.6+).
 
 ---
 
 ## Final Thoughts: How to Keep Carol Out
-
-MITM attacks exploit trust—trust in open networks, unverified certificates, or unsecured protocols. But with a few defenses, you can kick Carol out of the party:
 
 - Always use a VPN.
 - Enable HSTS, DNSSEC, and encrypted DNS.
 - Inspect SSL certificates.
 - Watch for anomalies: duplicate MAC addresses, suspicious DNS redirects, or missing HTTPS.
 
+In short: trust no one! Especially not the Wi-Fi named *Free_Cafe_WiFi*. Carol's out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction.
 
-`**In short:** *trust no one*, especially not the Wi-Fi named *Free_Cafe_WiFi*. Carol’s out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction.`
