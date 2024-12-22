@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Nooblogaurus</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://nooblogaurus.com/tags/</link>
     <description>Recent content in Tags on Nooblogaurus</description>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nooblogaurus.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Articles</title>
-      <link>http://localhost:1313/tags/articles/</link>
+      <link>https://nooblogaurus.com/tags/articles/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/articles/</guid>
+      <guid>https://nooblogaurus.com/tags/articles/</guid>
       <description></description>
     </item>
     <item>
       <title>Mitm</title>
-      <link>http://localhost:1313/tags/mitm/</link>
+      <link>https://nooblogaurus.com/tags/mitm/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mitm/</guid>
+      <guid>https://nooblogaurus.com/tags/mitm/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
+      <link>https://nooblogaurus.com/tags/tools/</link>
       <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tools/</guid>
+      <guid>https://nooblogaurus.com/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Tor</title>
-      <link>http://localhost:1313/tags/tor/</link>
+      <link>https://nooblogaurus.com/tags/tor/</link>
       <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tor/</guid>
+      <guid>https://nooblogaurus.com/tags/tor/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>http://localhost:1313/tags/bash/</link>
+      <link>https://nooblogaurus.com/tags/bash/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bash/</guid>
+      <guid>https://nooblogaurus.com/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Bruteforce</title>
-      <link>http://localhost:1313/tags/bruteforce/</link>
+      <link>https://nooblogaurus.com/tags/bruteforce/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bruteforce/</guid>
+      <guid>https://nooblogaurus.com/tags/bruteforce/</guid>
       <description></description>
     </item>
     <item>
       <title>Cheat Sheet</title>
-      <link>http://localhost:1313/tags/cheat-sheet/</link>
+      <link>https://nooblogaurus.com/tags/cheat-sheet/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cheat-sheet/</guid>
+      <guid>https://nooblogaurus.com/tags/cheat-sheet/</guid>
       <description></description>
     </item>
     <item>
       <title>CTF</title>
-      <link>http://localhost:1313/tags/ctf/</link>
+      <link>https://nooblogaurus.com/tags/ctf/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ctf/</guid>
+      <guid>https://nooblogaurus.com/tags/ctf/</guid>
       <description></description>
     </item>
     <item>
       <title>Flask</title>
-      <link>http://localhost:1313/tags/flask/</link>
+      <link>https://nooblogaurus.com/tags/flask/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/flask/</guid>
+      <guid>https://nooblogaurus.com/tags/flask/</guid>
       <description></description>
     </item>
     <item>
       <title>Fuzzing</title>
-      <link>http://localhost:1313/tags/fuzzing/</link>
+      <link>https://nooblogaurus.com/tags/fuzzing/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/fuzzing/</guid>
+      <guid>https://nooblogaurus.com/tags/fuzzing/</guid>
       <description></description>
     </item>
     <item>
       <title>Script</title>
-      <link>http://localhost:1313/tags/script/</link>
+      <link>https://nooblogaurus.com/tags/script/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/script/</guid>
+      <guid>https://nooblogaurus.com/tags/script/</guid>
       <description></description>
     </item>
     <item>
       <title>Smb</title>
-      <link>http://localhost:1313/tags/smb/</link>
+      <link>https://nooblogaurus.com/tags/smb/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/smb/</guid>
+      <guid>https://nooblogaurus.com/tags/smb/</guid>
       <description></description>
     </item>
   </channel>

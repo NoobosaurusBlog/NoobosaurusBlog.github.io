@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Welcome to Nooblogaurus on Nooblogaurus</title>
-    <link>http://localhost:1313/</link>
+    <link>https://nooblogaurus.com/</link>
     <description>Recent content in Welcome to Nooblogaurus on Nooblogaurus</description>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nooblogaurus.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MITM Attacks</title>
-      <link>http://localhost:1313/articles/mitm_crash_a_party/</link>
+      <link>https://nooblogaurus.com/articles/mitm_crash_a_party/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/mitm_crash_a_party/</guid>
-      <description>&lt;h1 id=&#34;mitm-attacks-how-to-crash-the-party-between-alice-and-bob&#34;&gt;&lt;strong&gt;MITM Attacks: How to Crash the Party Between Alice and Bob&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, &lt;em&gt;“Don’t mind me.”&lt;/em&gt; Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol—the uninvited hacker—isn’t just listening; she’s reading, stealing, and sometimes &lt;em&gt;tweaking&lt;/em&gt; what’s being said.&lt;/p&gt;
+      <guid>https://nooblogaurus.com/articles/mitm_crash_a_party/</guid>
+      <description>&lt;h1 id=&#34;mitm-attacks-how-to-crash-the-party-between-alice-and-bob&#34;&gt;MITM Attacks: How to Crash the Party Between Alice and Bob&lt;/h1&gt;
+&lt;p&gt;Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, &lt;em&gt;“Don’t mind me.”&lt;/em&gt; Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol (the uninvited hacker) isn’t just listening; she’s reading, stealing, and sometimes &lt;em&gt;tweaking&lt;/em&gt; what’s being said.&lt;/p&gt;
 &lt;p&gt;Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.&lt;/p&gt;</description>
     </item>
     <item>
       <title>InspecTor</title>
-      <link>http://localhost:1313/tools/inspector/</link>
+      <link>https://nooblogaurus.com/tools/inspector/</link>
       <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/inspector/</guid>
+      <guid>https://nooblogaurus.com/tools/inspector/</guid>
       <description>&lt;h2 id=&#34;inspector-a-streamlined-tool-for-website-metadata-extraction&#34;&gt;InspecTor: A Streamlined Tool for Website Metadata Extraction&lt;/h2&gt;
 &lt;p&gt;Pulling metadata from websites was once a straightforward task. You could hit a few URLs, scrape the required data, and move on. However, with the rise of dynamic content, Tor-hidden services (.onion domains), and increasing anonymity concerns, the process became far more complex. InspecTor is a command-line tool I developed to address these challenges. It simplifies metadata extraction from websites, including Tor services, while preserving user anonymity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Osintagram</title>
-      <link>http://localhost:1313/tools/osintagram/</link>
+      <link>https://nooblogaurus.com/tools/osintagram/</link>
       <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/osintagram/</guid>
+      <guid>https://nooblogaurus.com/tools/osintagram/</guid>
       <description>&lt;p&gt;Gathering OSINT (Open-Source Intelligence) from Instagram used to be straightforward—grab a GitHub tool, run it, and get results. Then Instagram’s API updates broke nearly everything, leaving most tools useless. That’s where &lt;strong&gt;Osintagram&lt;/strong&gt; comes in: a simple script I put together to finally get Instagram OSINT working again.&lt;/p&gt;
 &lt;p&gt;I’m no developer, just someone frustrated by older tools failing in CTFs and OSINT exercises. Osintagram isn’t perfect, but it’s built to handle the updated systems Instagram uses today. Let me show you how it works and why it might save you some headaches.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ffuf</title>
-      <link>http://localhost:1313/cheat-sheets/ffuf/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/ffuf/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/ffuf/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/ffuf/</guid>
       <description>&lt;p&gt;&lt;strong&gt;FFUF&lt;/strong&gt; (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffuf -c -w path/to/wordlist -u https://target_url/FUZZ
@@ -90,17 +90,17 @@
     </item>
     <item>
       <title>FlaskOfCookies</title>
-      <link>http://localhost:1313/tools/flask_of_cookies/</link>
+      <link>https://nooblogaurus.com/tools/flask_of_cookies/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/flask_of_cookies/</guid>
+      <guid>https://nooblogaurus.com/tools/flask_of_cookies/</guid>
       <description>&lt;p&gt;Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together &lt;strong&gt;FlaskOfCookies&lt;/strong&gt;, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.&lt;/p&gt;
 &lt;p&gt;To be clear, this isn’t entirely my invention. It started because I hit a wall on a &lt;strong&gt;Root-Me challenge&lt;/strong&gt;, I couldn’t get it done with &lt;strong&gt;noraj’s tool&lt;/strong&gt; (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hydra</title>
-      <link>http://localhost:1313/cheat-sheets/hydra/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/hydra/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/hydra/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/hydra/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Hydra&lt;/strong&gt; is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.&lt;/p&gt;
 &lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;IP&amp;gt; &amp;lt;protocol&amp;gt;
@@ -122,9 +122,9 @@
     </item>
     <item>
       <title>nmap</title>
-      <link>http://localhost:1313/cheat-sheets/nmap/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/nmap/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/nmap/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/nmap/</guid>
       <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap &amp;lt;target IP&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sT -sS -Pn -v 10.10.10.10
@@ -146,7 +146,7 @@
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;-p-&lt;/code&gt;&lt;/strong&gt;: Scan all 65,535 ports.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;-sV&lt;/code&gt;&lt;/strong&gt;: Detect services and versions running on the target.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;-O&lt;/code&gt;&lt;/strong&gt;: Detect the operating system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-v&lt;/code&gt;&lt;/strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;****, &lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;code&gt;-vv&lt;/code&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;, ****&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;****&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;code&gt;-vvv&lt;/code&gt;&lt;/strong&gt;: Set verbosity levels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;-v&lt;/code&gt;, &lt;code&gt;-vv&lt;/code&gt;, &lt;code&gt;-vvv&lt;/code&gt;&lt;/strong&gt;: Set verbosity levels.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;--script vuln&lt;/code&gt;&lt;/strong&gt;: Run vulnerability scripts.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;--script vulners&lt;/code&gt;&lt;/strong&gt;: Use vulners scripts for CVE-based scanning.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;--script=http-enum&lt;/code&gt;&lt;/strong&gt;: Act like Nikto to enumerate HTTP resources.&lt;/li&gt;
@@ -172,27 +172,27 @@
     </item>
     <item>
       <title>redflagger</title>
-      <link>http://localhost:1313/tools/redflagger/</link>
+      <link>https://nooblogaurus.com/tools/redflagger/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/redflagger/</guid>
+      <guid>https://nooblogaurus.com/tools/redflagger/</guid>
       <description>&lt;p&gt;Daily domain reports are a treasure trove for cybersecurity analysts, but collecting and organizing them can quickly become tedious. That’s where &lt;strong&gt;RedFlagger&lt;/strong&gt; comes in. This lightweight Bash script automates the process of downloading and aggregating reports from &lt;a href=&#34;https://dl.red.flag.domains/daily/&#34;&gt;Red Flag Domains&lt;/a&gt;. It’s simple, efficient, and built to save time—whether you’re sifting through a few recent reports or analyzing a year’s worth of data.&lt;/p&gt;
 &lt;h2 id=&#34;the-backstory&#34;&gt;The Backstory&lt;/h2&gt;
 &lt;p&gt;This project started as a bit of a joke. My friend &lt;strong&gt;lil-doudou&lt;/strong&gt; had written an excellent Python tool called &lt;a href=&#34;https://github.com/lil-doudou/NewRedflag&#34;&gt;NewRedflag&lt;/a&gt; to handle domain report aggregation, but he’s also a massive Bash enthusiast. So, as a playful nod to his love for scripting, I decided to rewrite the functionality in Bash—simpler, lighter, and arguably more fun (depending on your feelings about shell scripts).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Webpage Infos Extractor</title>
-      <link>http://localhost:1313/tools/webpage_infos_extractor/</link>
+      <link>https://nooblogaurus.com/tools/webpage_infos_extractor/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/webpage_infos_extractor/</guid>
+      <guid>https://nooblogaurus.com/tools/webpage_infos_extractor/</guid>
       <description>&lt;p&gt;When you need to quickly understand the structure of a webpage, a lightweight tool can save the day. &lt;strong&gt;Webpage Infos Extractor&lt;/strong&gt; is just that: a simple JavaScript bookmarklet that extracts useful information like forms, links, images, and word count from any webpage. No extensions or extra software required—just a single bookmark to get key insights instantly.&lt;/p&gt;
 &lt;h2 id=&#34;why-build-this&#34;&gt;Why Build This?&lt;/h2&gt;
 &lt;p&gt;Sometimes, the simplest tools are the most convenient. I needed a way to peek under the hood of webpages during quick tests or casual research without opening dev tools every time. So, I threw together this bookmarklet to make data analysis fast and portable. It’s not groundbreaking, but it gets the job done without any fuss.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meterpreter</title>
-      <link>http://localhost:1313/cheat-sheets/meterpreter/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/meterpreter/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/meterpreter/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/meterpreter/</guid>
       <description>&lt;h2 id=&#34;basic-commands&#34;&gt;Basic Commands&lt;/h2&gt;
 &lt;p&gt;Start with the essentials to get a lay of the land:&lt;/p&gt;
 &lt;ul&gt;
@@ -208,9 +208,9 @@
     </item>
     <item>
       <title>smbclient</title>
-      <link>http://localhost:1313/cheat-sheets/smbclient/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/smbclient/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/smbclient/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/smbclient/</guid>
       <description>&lt;p&gt;&lt;strong&gt;smbclient&lt;/strong&gt; is a command-line tool that allows you to interact with SMB (Server Message Block) file shares. Whether you’re uploading files, listing directories, or troubleshooting network shares, this tool is your go-to for SMB.&lt;/p&gt;
 &lt;h2 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h2&gt;
 &lt;p&gt;To connect to an SMB file share, use the following syntax:&lt;/p&gt;
@@ -223,9 +223,9 @@
     </item>
     <item>
       <title>SMBMap</title>
-      <link>http://localhost:1313/cheat-sheets/smbmap/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/smbmap/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/smbmap/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/smbmap/</guid>
       <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smbmap -u &amp;lt;username&amp;gt; -p &amp;lt;password&amp;gt; -H &amp;lt;host&amp;gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-usage-examples&#34;&gt;Common Usage Examples&lt;/h2&gt;
@@ -269,9 +269,9 @@
     </item>
     <item>
       <title>Wordlister</title>
-      <link>http://localhost:1313/tools/wordlister/</link>
+      <link>https://nooblogaurus.com/tools/wordlister/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tools/wordlister/</guid>
+      <guid>https://nooblogaurus.com/tools/wordlister/</guid>
       <description>&lt;p&gt;Sometimes you just need a clean wordlist without the frills of a complicated tool. That’s where this &lt;strong&gt;Wordlist Generator&lt;/strong&gt; comes in. It’s a simple Bash script designed to pull unique words from one or more text files, sort them, and save them neatly into a wordlist. Whether you’re prepping for a dictionary attack, building a natural language dataset, or just satisfying your curiosity, this script gets the job done quickly and efficiently.&lt;/p&gt;</description>
     </item>
   </channel>

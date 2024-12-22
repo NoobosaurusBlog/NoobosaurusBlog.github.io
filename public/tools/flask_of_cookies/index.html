@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>FlaskOfCookies | Nooblogaurus</title>
 <meta name="keywords" content="tools, CTF, Flask">
 <meta name="description" content="Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together FlaskOfCookies, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.
 To be clear, this isn’t entirely my invention. It started because I hit a wall on a Root-Me challenge, I couldn’t get it done with noraj’s tool (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tools/flask_of_cookies/">
-<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://nooblogaurus.com/tools/flask_of_cookies/">
+<link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nooblogaurus.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nooblogaurus.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nooblogaurus.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nooblogaurus.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nooblogaurus.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tools/flask_of_cookies/">
+<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/tools/flask_of_cookies/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,7 +56,74 @@ To be clear, this isn’t entirely my invention. It started because I hit a wall
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://nooblogaurus.com/tools/flask_of_cookies/">
+  <meta property="og:site_name" content="Nooblogaurus">
+  <meta property="og:title" content="FlaskOfCookies">
+  <meta property="og:description" content="Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together FlaskOfCookies, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.
+To be clear, this isn’t entirely my invention. It started because I hit a wall on a Root-Me challenge, I couldn’t get it done with noraj’s tool (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tools">
+    <meta property="article:published_time" content="2024-12-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-15T00:00:00+00:00">
+    <meta property="article:tag" content="Tools">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Flask">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FlaskOfCookies">
+<meta name="twitter:description" content="Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together FlaskOfCookies, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.
+To be clear, this isn’t entirely my invention. It started because I hit a wall on a Root-Me challenge, I couldn’t get it done with noraj’s tool (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Tools",
+      "item": "https://nooblogaurus.com/tools/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "FlaskOfCookies",
+      "item": "https://nooblogaurus.com/tools/flask_of_cookies/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FlaskOfCookies",
+  "name": "FlaskOfCookies",
+  "description": "Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together FlaskOfCookies, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.\nTo be clear, this isn’t entirely my invention. It started because I hit a wall on a Root-Me challenge, I couldn’t get it done with noraj’s tool (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.\n",
+  "keywords": [
+    "tools", "CTF", "Flask"
+  ],
+  "articleBody": "Flask web applications are clever beasts, storing session data client-side in cookies. It’s convenient for developers, but it can also be a security rabbit hole if you’re not careful. That’s why I put together FlaskOfCookies, a tool to help you decode, encode, and (if necessary) brute-force Flask session cookies.\nTo be clear, this isn’t entirely my invention. It started because I hit a wall on a Root-Me challenge, I couldn’t get it done with noraj’s tool (props to Alexandre Zanni for his great work). So, I decided to rework it, adding my own spin to tackle the issue. This tool is for anyone who’s curious about Flask’s session cookies, whether you’re debugging, testing, or just poking around.\nWhy Session Cookies Matter Session cookies in Flask encode data into a compact, URL-safe string. They’re handy for keeping track of users or passing small pieces of data between the client and server. But they also mean your data sits in plain sight. If you’re not careful with what you store—or if your secret key isn’t strong—those cookies can tell stories you’d rather keep quiet.\nWhat Does FlaskOfCookies Do? Decoding Cookies FlaskOfCookies can crack open a Flask session cookie and show you the contents. If you have the secret key, it’ll reconstruct the original session data. Without the key, it’ll still give you a peek at the encoded structure. This is helpful for:\nChecking if sensitive information is leaking. Testing whether session data is being properly secured. Encoding Cookies Need to create a Flask-compatible session cookie? FlaskOfCookies takes a Python dictionary and a secret key as input and spits out a session cookie. This is handy if you’re:\nDebugging session handling in your app. Seeing how different data structures get encoded. Brute-Forcing Secret Keys If you don’t know the secret key, FlaskOfCookies can try to guess it for you. Just supply a wordlist, and the tool will hammer away until it finds a match (or gives up). This isn’t a feature for cracking into random apps; it’s a wake-up call to use strong, random keys. If you’re using “password123” for your Flask secret, consider yourself warned.\nHow It Works FlaskOfCookies is built on Flask’s session-handling mechanisms and the itsdangerous library, which Flask uses under the hood. It aligns with Flask’s default behavior, including the cookie-session salt, to make sure the results match what Flask itself would produce.\nHere’s the general flow:\nDecoding: The tool parses the encoded cookie value, optionally verifying it against a provided secret key. Encoding: It serializes a Python dictionary into a session cookie using Flask-compatible methods. Brute-Forcing: Tries every key in your wordlist to find the one that correctly decodes the cookie. It’s straightforward, with clear error messages and input validation to keep things manageable.\nWhy Use FlaskOfCookies? Honestly, this is more of a “because I had to” kind of tool. After struggling with the Root-Me challenge and realizing noraj’s tool wasn’t working for me, I figured I’d make something myself. FlaskOfCookies won’t win awards, but it’s lightweight, easy to use, and gives you insight into how Flask manages session cookies. Whether you’re a Flask developer or a security researcher, it can help you:\nLearn how session cookies work. Test your app for key management flaws. Debug session-related bugs. Getting Started with FlaskOfCookies First, make sure you have Python 3.x installed. You’ll also need Flask and itsdangerous:\npip install Flask itsdangerous Then, grab FlaskOfCookies from the repository:\ngit clone https://github.com/noobosaurus-r3x/FlaskOfCookies cd FlaskOfCookies Alternatively, you can download the FOC.py script directly.\nWhat You Can Do With It Here’s a quick guide to the tool’s commands:\nDecode a Session Cookie If you know the secret key:\npython3 FOC.py decode -s '' -c '' Without the key, you can still see the structure:\npython3 FOC.py decode -c '' Encode a Session Cookie To create a new session cookie:\npython3 FOC.py encode -s '' -t \"{'username':'admin','role':'superuser'}\" Brute-Force the Secret Key To test key strength with a wordlist:\npython3 FOC.py bruteforce -c '' -w '' Final Thoughts FlaskOfCookies isn’t groundbreaking, but it’s a practical little tool for anyone exploring Flask session cookies. Whether you’re trying to figure out how they work, testing your app’s security, or debugging a frustrating challenge, it’ll save you some time.\nRemember, this started as a personal project to solve a specific problem, so don’t expect perfection. That said, I hope it’s useful—and if you think of ways to improve it, feel free to fork the repo and go wild. You can find it here.\n",
+  "wordCount" : "745",
+  "inLanguage": "en",
+  "datePublished": "2024-12-15T00:00:00Z",
+  "dateModified": "2024-12-15T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nooblogaurus.com/tools/flask_of_cookies/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nooblogaurus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nooblogaurus.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -74,7 +141,7 @@ To be clear, this isn’t entirely my invention. It started because I hit a wall
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <a href="https://nooblogaurus.com/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -100,27 +167,27 @@ To be clear, this isn’t entirely my invention. It started because I hit a wall
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="Home">
+                <a href="https://nooblogaurus.com/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/cheat-sheets/" title="Cheat Sheets">
+                <a href="https://nooblogaurus.com/cheat-sheets/" title="Cheat Sheets">
                     <span>Cheat Sheets</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tools/" title="Tools">
+                <a href="https://nooblogaurus.com/tools/" title="Tools">
                     <span>Tools</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/articles/" title="Articles">
+                <a href="https://nooblogaurus.com/articles/" title="Articles">
                     <span>Articles</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://nooblogaurus.com/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -203,16 +270,16 @@ To be clear, this isn’t entirely my invention. It started because I hit a wall
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/tools/">Tools</a></li>
-      <li><a href="http://localhost:1313/tags/ctf/">CTF</a></li>
-      <li><a href="http://localhost:1313/tags/flask/">Flask</a></li>
+      <li><a href="https://nooblogaurus.com/tags/tools/">Tools</a></li>
+      <li><a href="https://nooblogaurus.com/tags/ctf/">CTF</a></li>
+      <li><a href="https://nooblogaurus.com/tags/flask/">Flask</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Nooblogaurus</a></span> · 
+        <span>&copy; 2024 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
 
     <span>
         Powered by

@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/articles/</loc>
+    <loc>https://nooblogaurus.com/tags/articles/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>https://nooblogaurus.com/articles/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mitm/</loc>
+    <loc>https://nooblogaurus.com/tags/mitm/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/mitm_crash_a_party/</loc>
+    <loc>https://nooblogaurus.com/articles/mitm_crash_a_party/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://nooblogaurus.com/tags/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://nooblogaurus.com/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/inspector/</loc>
+    <loc>https://nooblogaurus.com/tools/inspector/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/osintagram/</loc>
+    <loc>https://nooblogaurus.com/tools/osintagram/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tools/</loc>
+    <loc>https://nooblogaurus.com/tags/tools/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
+    <loc>https://nooblogaurus.com/tools/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tor/</loc>
+    <loc>https://nooblogaurus.com/tags/tor/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://nooblogaurus.com/tags/bash/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bruteforce/</loc>
+    <loc>https://nooblogaurus.com/tags/bruteforce/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cheat-sheet/</loc>
+    <loc>https://nooblogaurus.com/tags/cheat-sheet/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ctf/</loc>
+    <loc>https://nooblogaurus.com/tags/ctf/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/ffuf/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/ffuf/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/flask/</loc>
+    <loc>https://nooblogaurus.com/tags/flask/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/flask_of_cookies/</loc>
+    <loc>https://nooblogaurus.com/tools/flask_of_cookies/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/fuzzing/</loc>
+    <loc>https://nooblogaurus.com/tags/fuzzing/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/hydra/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/hydra/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/nmap/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/nmap/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/redflagger/</loc>
+    <loc>https://nooblogaurus.com/tools/redflagger/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/script/</loc>
+    <loc>https://nooblogaurus.com/tags/script/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/webpage_infos_extractor/</loc>
+    <loc>https://nooblogaurus.com/tools/webpage_infos_extractor/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/meterpreter/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/meterpreter/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
+    <loc>https://nooblogaurus.com/tags/smb/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/smbclient/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/smbclient/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cheat-sheets/smbmap/</loc>
+    <loc>https://nooblogaurus.com/cheat-sheets/smbmap/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/wordlister/</loc>
+    <loc>https://nooblogaurus.com/tools/wordlister/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://nooblogaurus.com/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://nooblogaurus.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://nooblogaurus.com/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/search/</loc>
+    <loc>https://nooblogaurus.com/search/search/</loc>
   </url>
 </urlset>

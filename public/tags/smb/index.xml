@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Smb on Nooblogaurus</title>
-    <link>http://localhost:1313/tags/smb/</link>
+    <link>https://nooblogaurus.com/tags/smb/</link>
     <description>Recent content in Smb on Nooblogaurus</description>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/smb/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nooblogaurus.com/tags/smb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>smbclient</title>
-      <link>http://localhost:1313/cheat-sheets/smbclient/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/smbclient/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/smbclient/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/smbclient/</guid>
       <description>&lt;p&gt;&lt;strong&gt;smbclient&lt;/strong&gt; is a command-line tool that allows you to interact with SMB (Server Message Block) file shares. Whether you’re uploading files, listing directories, or troubleshooting network shares, this tool is your go-to for SMB.&lt;/p&gt;
 &lt;h2 id=&#34;basic-usage&#34;&gt;Basic Usage&lt;/h2&gt;
 &lt;p&gt;To connect to an SMB file share, use the following syntax:&lt;/p&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>SMBMap</title>
-      <link>http://localhost:1313/cheat-sheets/smbmap/</link>
+      <link>https://nooblogaurus.com/cheat-sheets/smbmap/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cheat-sheets/smbmap/</guid>
+      <guid>https://nooblogaurus.com/cheat-sheets/smbmap/</guid>
       <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;smbmap -u &amp;lt;username&amp;gt; -p &amp;lt;password&amp;gt; -H &amp;lt;host&amp;gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-usage-examples&#34;&gt;Common Usage Examples&lt;/h2&gt;
