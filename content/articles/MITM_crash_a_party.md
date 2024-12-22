@@ -142,4 +142,4 @@ MITM attacks exploit trust—trust in open networks, unverified certificates, or
 - Watch for anomalies: duplicate MAC addresses, suspicious DNS redirects, or missing HTTPS.
 
 
-**In short:** *trust no one*, especially not the Wi-Fi named *Free_Cafe_WiFi*. Carol’s out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction.
+`**In short:** *trust no one*, especially not the Wi-Fi named *Free_Cafe_WiFi*. Carol’s out there, latte in hand, waiting for you to slip up. Don’t give her the satisfaction.`
