@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bash on Nooblogaurus</title>
-    <link>https://NoobosaurusBlog.github.io/tags/bash/</link>
+    <link>https://nooblogaurus.com/tags/bash/</link>
     <description>Recent content in Bash on Nooblogaurus</description>
-    <generator>Hugo -- 0.139.5</generator>
+    <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://NoobosaurusBlog.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nooblogaurus.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>redflagger</title>
-      <link>https://NoobosaurusBlog.github.io/tools/redflagger/</link>
+      <link>https://nooblogaurus.com/tools/redflagger/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://NoobosaurusBlog.github.io/tools/redflagger/</guid>
+      <guid>https://nooblogaurus.com/tools/redflagger/</guid>
       <description>&lt;p&gt;Daily domain reports are a treasure trove for cybersecurity analysts, but collecting and organizing them can quickly become tedious. That’s where &lt;strong&gt;RedFlagger&lt;/strong&gt; comes in. This lightweight Bash script automates the process of downloading and aggregating reports from &lt;a href=&#34;https://dl.red.flag.domains/daily/&#34;&gt;Red Flag Domains&lt;/a&gt;. It’s simple, efficient, and built to save time—whether you’re sifting through a few recent reports or analyzing a year’s worth of data.&lt;/p&gt;
 &lt;h2 id=&#34;the-backstory&#34;&gt;The Backstory&lt;/h2&gt;
 &lt;p&gt;This project started as a bit of a joke. My friend &lt;strong&gt;lil-doudou&lt;/strong&gt; had written an excellent Python tool called &lt;a href=&#34;https://github.com/lil-doudou/NewRedflag&#34;&gt;NewRedflag&lt;/a&gt; to handle domain report aggregation, but he’s also a massive Bash enthusiast. So, as a playful nod to his love for scripting, I decided to rewrite the functionality in Bash—simpler, lighter, and arguably more fun (depending on your feelings about shell scripts).&lt;/p&gt;</description>

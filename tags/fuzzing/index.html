@@ -9,17 +9,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://NoobosaurusBlog.github.io/tags/fuzzing/">
-<link crossorigin="anonymous" href="https://NoobosaurusBlog.github.io/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://NoobosaurusBlog.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://NoobosaurusBlog.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://NoobosaurusBlog.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://NoobosaurusBlog.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://NoobosaurusBlog.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://nooblogaurus.com/tags/fuzzing/">
+<link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nooblogaurus.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nooblogaurus.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nooblogaurus.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nooblogaurus.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nooblogaurus.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://NoobosaurusBlog.github.io/tags/fuzzing/index.xml">
-<link rel="alternate" hreflang="en" href="https://NoobosaurusBlog.github.io/tags/fuzzing/">
+<link rel="alternate" type="application/rss+xml" href="https://nooblogaurus.com/tags/fuzzing/index.xml">
+<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/tags/fuzzing/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,7 +56,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://NoobosaurusBlog.github.io/tags/fuzzing/">
+</noscript><meta property="og:url" content="https://nooblogaurus.com/tags/fuzzing/">
   <meta property="og:site_name" content="Nooblogaurus">
   <meta property="og:title" content="Fuzzing">
   <meta property="og:locale" content="en-us">
@@ -82,7 +82,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://NoobosaurusBlog.github.io/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
+            <a href="https://nooblogaurus.com/" accesskey="h" title="Nooblogaurus (Alt + H)">Nooblogaurus</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -108,27 +108,27 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://NoobosaurusBlog.github.io/" title="Home">
+                <a href="https://nooblogaurus.com/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://NoobosaurusBlog.github.io/cheat-sheets/" title="Cheat Sheets">
+                <a href="https://nooblogaurus.com/cheat-sheets/" title="Cheat Sheets">
                     <span>Cheat Sheets</span>
                 </a>
             </li>
             <li>
-                <a href="https://NoobosaurusBlog.github.io/tools/" title="Tools">
+                <a href="https://nooblogaurus.com/tools/" title="Tools">
                     <span>Tools</span>
                 </a>
             </li>
             <li>
-                <a href="https://NoobosaurusBlog.github.io/articles/" title="Articles">
+                <a href="https://nooblogaurus.com/articles/" title="Articles">
                     <span>Articles</span>
                 </a>
             </li>
             <li>
-                <a href="https://NoobosaurusBlog.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://nooblogaurus.com/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -152,12 +152,12 @@
 Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ Examples # Filter responses with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -u https://target_url/ -H &#34;Host: FUZZ&#34; -fs 4242 # Filter responses with a 401 status code ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 # Filter 401 responses and fuzz passwords in a POST request ffuf -w /path/to/postdata.txt -X POST -d &#34;username=admin\&amp;password=FUZZ&#34; -u https://target_url/login.php -fc 401 Common Flags -c: Enable colorized output. -maxtime: Set the maximum runtime for the process in seconds. -p: Set a delay between requests (e.g., 0.1 seconds). -v: Verbose output. -t: Number of threads (default is 40). -mc: Match specific HTTP status codes (e.g., 200, 301, 403, or all). -fc: Filter out responses by HTTP status codes. -w: Specify the wordlist path. -u: Define the target URL. -s: Enable silent mode. -recursion: Enable recursive fuzzing. -r: Follow redirects. -o: Output results to a file. -of: Specify output format (e.g., json, html, csv, all). -b: Include cookies in the request. Examples # Match all responses, filter 42-byte answers, output colored and verbose ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v # Fuzz host headers and show only status 200 responses ffuf -w hosts.txt -u https://example.org/ -H &#34;Host: FUZZ&#34; -mc 200 # Fuzz the `name` field in a POST request with JSON data, filter responses containing &#34;error&#34; ffuf -w entries.txt -u https://example.org/ -X POST -H &#34;Content-Type: application/json&#34; \ -d &#39;{&#34;name&#34;: &#34;FUZZ&#34;, &#34;anotherkey&#34;: &#34;anothervalue&#34;}&#39; -fr &#34;error&#34; # Use two wordlists for parameter and value fuzzing, match responses containing &#34;VAL&#34; ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr &#34;VAL&#34; -c Tips and Tricks Interactive Mode: Press Enter while FFUF is running to access interactive features, such as reconfiguring filters or saving the state. Multiple Payloads: Use the FUZZ keyword multiple times in a URL (e.g., https://example.org/path/FUZZ/another_path/FUZZ). Variables in URLs: Specify payload locations using variables (e.g., https://example.org/path/{var1}/another_path/{var2}). </p>
   </div>
   <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to ffuf" href="https://NoobosaurusBlog.github.io/cheat-sheets/ffuf/"></a>
+  <a class="entry-link" aria-label="post link to ffuf" href="https://nooblogaurus.com/cheat-sheets/ffuf/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://NoobosaurusBlog.github.io/">Nooblogaurus</a></span> · 
+        <span>&copy; 2024 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
 
     <span>
         Powered by
