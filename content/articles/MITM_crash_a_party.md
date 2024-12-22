@@ -5,7 +5,7 @@ tags: ["articles", "mitm"]
 ---
 # MITM Attacks: How to Crash the Party Between Alice and Bob
 
-Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, *“Don’t mind me.”* Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol (the uninvited hacker) isn’t just listening; she’s reading, stealing, and sometimes *tweaking* what’s being said.
+Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, *“Don’t mind me.”* Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol (the uninvited hacker) isn’t just listening, she’s reading, stealing, and sometimes *tweaking* what’s being said.
 
 Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.
 
@@ -13,7 +13,7 @@ Today, we’ll crash this party and take a look at how Carol pulls off her trick
 
 ## What Even Is a Man-in-the-Middle Attack?
 
-Picture this: Alice and Bob are exchanging secrets—love letters, memes, bank details, or maybe just complaining about Carol. They think they’re communicating directly, but little do they know, Carol is sitting in the middle, reading every word, tweaking the conversation, and cackling like a villain in a bad spy movie.
+Picture this: Alice and Bob are exchanging secrets, love letters, memes, bank details, or maybe just complaining about Carol. They think they’re communicating directly, but little do they know, Carol is sitting in the middle, reading every word, tweaking the conversation, and cackling like a villain in a bad spy movie.
 
 In the digital world, Alice could be your laptop, Bob a website or server, and Carol a hacker lurking on your café’s Wi-Fi or corporate network. She intercepts traffic, decrypts it (sometimes), and messes with it however she pleases.
 
@@ -116,7 +116,7 @@ Example `dns_hosts` file:
 
 ### 4. SSL Stripping: Downgrading You Back to 2005
 
-You know HTTPS—the comforting padlock in your browser bar? Carol strips it away like a magician revealing a trapdoor.
+You know HTTPS, the comforting padlock in your browser bar? Carol strips it away like a magician revealing a trapdoor.
 
 #### How It Works:
 
