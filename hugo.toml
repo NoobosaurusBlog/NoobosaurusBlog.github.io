@@ -2,7 +2,8 @@ baseURL = "https://nooblogaurus.com/"
 languageCode = "en-us"
 title = "Nooblogaurus"
 theme = "PaperMod"
-paginate = 5
+pagination = { pagerSize = 5 }
+
 
 canonifyURLs = true # Force l'utilisation de URLs absolues basées sur baseURL
 
