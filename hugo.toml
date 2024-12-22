@@ -4,6 +4,8 @@ title = "Nooblogaurus"
 theme = "PaperMod"
 paginate = 5
 
+canonifyURLs = true # Force l'utilisation de URLs absolues basées sur baseURL
+
 [params.profileMode]
   enabled = true
   author = "Noobosaurus"
@@ -11,28 +13,24 @@ paginate = 5
   subtitle = "A blog about cybersecurity, tools, cheat sheets, and more."
   showReadingTime = true
   showToc = true
-  defaultTheme = "auto"  # Auto-switch dark/light mode
+  defaultTheme = "auto"
   favicon = "favicon.ico"
-  imageUrl = "/assets/images/LOGO2.png" # optional
-  imageTitle = "Noobosaurus R3x" # optional
-  imageWidth = 120 # custom size
-  imageHeight = 120 # custom size
-
-# [params.homeInfoParams]
-#   title = "Welcome to Nooblogaurus! 🦖"
-#   content = "Explore cheat sheets, tools, scripts, and articles on cyber, CTFs, and more. Dig in and discover!"
+  imageUrl = "/assets/images/LOGO2.png"
+  imageTitle = "Noobosaurus R3x"
+  imageWidth = 120
+  imageHeight = 120
 
 [outputs]
-home = ["HTML", "RSS", "JSON"] # JSON is necessary for search
+home = ["HTML", "RSS", "JSON"]
 
 [params.fuseOpts]
   isCaseSensitive = false
   shouldSort = true
   location = 0
-  distance = 1_000
+  distance = 1000
   threshold = 0.4
   minMatchCharLength = 0
-  keys = [ "title", "permalink", "summary", "content" ]
+  keys = ["title", "permalink", "summary", "content"]
 
 [[params.profileMode.buttons]]
   name = "linkedin"
@@ -75,11 +73,7 @@ disableSearch = false
     url = "/cheat-sheets/"
     weight = 2
   [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 5
-  [[menu.main]]
     name = "Search"
     url = "/search/"
-    weight = 6
+    weight = 5
 

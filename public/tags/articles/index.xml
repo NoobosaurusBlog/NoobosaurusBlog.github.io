@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Articles on Nooblogaurus</title>
-    <link>https://NoobosaurusBlog.github.io/tags/articles/</link>
+    <link>https://nooblogaurus.com/tags/articles/</link>
     <description>Recent content in Articles on Nooblogaurus</description>
     <generator>Hugo -- 0.139.5</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://NoobosaurusBlog.github.io/tags/articles/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nooblogaurus.com/tags/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MITM Attacks</title>
-      <link>https://NoobosaurusBlog.github.io/articles/mitm_crash_a_party/</link>
+      <link>https://nooblogaurus.com/articles/mitm_crash_a_party/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://NoobosaurusBlog.github.io/articles/mitm_crash_a_party/</guid>
+      <guid>https://nooblogaurus.com/articles/mitm_crash_a_party/</guid>
       <description>&lt;h1 id=&#34;mitm-attacks-how-to-crash-the-party-between-alice-and-bob&#34;&gt;&lt;strong&gt;MITM Attacks: How to Crash the Party Between Alice and Bob&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Man-in-the-Middle attacks (MITM) are like showing up uninvited to someone else’s private conversation, grabbing a chair, and whispering, &lt;em&gt;“Don’t mind me.”&lt;/em&gt; Except, instead of tea and gossip, the stakes are passwords, credit card numbers, and the little details your digital life holds. Carol—the uninvited hacker—isn’t just listening; she’s reading, stealing, and sometimes &lt;em&gt;tweaking&lt;/em&gt; what’s being said.&lt;/p&gt;
 &lt;p&gt;Today, we’ll crash this party and take a look at how Carol pulls off her tricks, why they work, and what you can do to stop her from making herself at home in your traffic.&lt;/p&gt;</description>
