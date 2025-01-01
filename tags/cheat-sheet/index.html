@@ -157,16 +157,17 @@ Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ Examples # F
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Hydra
+    <h2 class="entry-hint-parent">Hydra Cheat Sheet
     </h2>
   </header>
   <div class="entry-content">
-    <p>Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.
-Basic Syntax hydra [options] &lt;IP&gt; &lt;protocol&gt; Common Flags -h: Display the help menu. -l &lt;username&gt;: Specify a single username/login. -L &lt;wordlist&gt;: Use a wordlist for usernames/logins. -p &lt;password&gt;: Specify a single password. -P &lt;wordlist&gt;: Use a wordlist for passwords. -s &lt;PORT&gt;: Specify the target port. -f: Stop brute-forcing after finding valid credentials. -R: Restore a previous session. -t &lt;number&gt;: Set the number of threads to use. -V: Enable verbose mode. Supported Protocols Hydra supports numerous protocols, including:
+    <p>🛠️ Hydra Cheat Sheet 💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.
+📌 1. Basic Syntax hydra [options] &lt;IP/Target&gt; &lt;protocol&gt; Examples:
+Brute-force SSH login with a single username and password list: hydra -l admin -P passwords.txt 192.168.1.10 ssh Brute-force HTTP POST login form: hydra -l admin -P passwords.txt 192.168.1.10 http-post-form &#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34; 📌 2. Common Flags Flag Description -h Display help menu. -l &lt;user&gt; Single username/login. -L &lt;file&gt; Wordlist for usernames. -p &lt;pass&gt; Single password. -P &lt;file&gt; Wordlist for passwords. -s &lt;port&gt; Specify target port. -f Stop after finding valid credentials. -R Restore previous session. -t &lt;num&gt; Number of parallel threads (default: 16). -V Verbose output (show each attempt). -I Ignore an existing restore file. -u Loop usernames with each password attempt. -w &lt;sec&gt; Wait seconds between retries. -o &lt;file&gt; Write found credentials to a file. 📌 3. Supported Protocols Hydra supports a wide range of protocols, including:
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Hydra" href="https://nooblogaurus.com/cheat-sheets/hydra/"></a>
+  <a class="entry-link" aria-label="post link to Hydra Cheat Sheet" href="https://nooblogaurus.com/cheat-sheets/hydra/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 

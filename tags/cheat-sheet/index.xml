@@ -64,28 +64,95 @@
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>Hydra</title>
+      <title>Hydra Cheat Sheet</title>
       <link>https://nooblogaurus.com/cheat-sheets/hydra/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
       <guid>https://nooblogaurus.com/cheat-sheets/hydra/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Hydra&lt;/strong&gt; is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.&lt;/p&gt;
-&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;IP&amp;gt; &amp;lt;protocol&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-flags&#34;&gt;Common Flags&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;-hydra-cheat-sheet&#34;&gt;&lt;strong&gt;🛠️ Hydra Cheat Sheet&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;💡 Hydra&lt;/strong&gt; is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-1-basic-syntax&#34;&gt;📌 &lt;strong&gt;1. Basic Syntax&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &amp;lt;IP/Target&amp;gt; &amp;lt;protocol&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-h&lt;/code&gt;&lt;/strong&gt;: Display the help menu.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-l &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Specify a single username/login.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-L &amp;lt;wordlist&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Use a wordlist for usernames/logins.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-p &amp;lt;password&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Specify a single password.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-P &amp;lt;wordlist&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Use a wordlist for passwords.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-s &amp;lt;PORT&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Specify the target port.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/strong&gt;: Stop brute-forcing after finding valid credentials.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-R&lt;/code&gt;&lt;/strong&gt;: Restore a previous session.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-t &amp;lt;number&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Set the number of threads to use.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-V&lt;/code&gt;&lt;/strong&gt;: Enable verbose mode.&lt;/li&gt;
+&lt;li&gt;Brute-force SSH login with a single username and password list:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra -l admin -P passwords.txt 192.168.1.10 ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Brute-force HTTP POST login form:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hydra -l admin -P passwords.txt 192.168.1.10 http-post-form &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/login:username=^USER^&amp;amp;password=^PASS^:F=Invalid login&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;supported-protocols&#34;&gt;Supported Protocols&lt;/h2&gt;
-&lt;p&gt;Hydra supports numerous protocols, including:&lt;/p&gt;</description>
+&lt;hr&gt;
+&lt;h2 id=&#34;-2-common-flags&#34;&gt;📌 &lt;strong&gt;2. Common Flags&lt;/strong&gt;&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Flag&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-h&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Display help menu.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-l &amp;lt;user&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Single username/login.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-L &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Wordlist for usernames.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-p &amp;lt;pass&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Single password.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-P &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Wordlist for passwords.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-s &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Specify target port.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-f&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Stop after finding valid credentials.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-R&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Restore previous session.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-t &amp;lt;num&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Number of parallel threads (default: 16).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-V&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Verbose output (show each attempt).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-I&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Ignore an existing restore file.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-u&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Loop usernames with each password attempt.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-w &amp;lt;sec&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Wait &lt;!-- raw HTML omitted --&gt; seconds between retries.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-o &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Write found credentials to a file.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-3-supported-protocols&#34;&gt;📌 &lt;strong&gt;3. Supported Protocols&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Hydra supports a wide range of protocols, including:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>nmap</title>

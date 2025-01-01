@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Cheat Sheets | Nooblogaurus</title>
+<title>Authentication | Nooblogaurus</title>
 <meta name="keywords" content="">
-<meta name="description" content="My cheat sheets are like the sticky notes of my brain—quick, messy, but (hopefully) useful. Feel free to swipe them, tweak them, or point out what I’ve missed. Sharing is caring, right ?">
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="https://nooblogaurus.com/cheat-sheets/">
+<link rel="canonical" href="https://nooblogaurus.com/tags/authentication/">
 <link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nooblogaurus.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nooblogaurus.com/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://nooblogaurus.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://nooblogaurus.com/cheat-sheets/index.xml">
-<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/cheat-sheets/">
+<link rel="alternate" type="application/rss+xml" href="https://nooblogaurus.com/tags/authentication/index.xml">
+<link rel="alternate" hreflang="en" href="https://nooblogaurus.com/tags/authentication/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,31 +56,15 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://nooblogaurus.com/cheat-sheets/">
+</noscript><meta property="og:url" content="https://nooblogaurus.com/tags/authentication/">
   <meta property="og:site_name" content="Nooblogaurus">
-  <meta property="og:title" content="Cheat Sheets">
-  <meta property="og:description" content="My cheat sheets are like the sticky notes of my brain—quick, messy, but (hopefully) useful. Feel free to swipe them, tweak them, or point out what I’ve missed. Sharing is caring, right ?">
+  <meta property="og:title" content="Authentication">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cheat Sheets">
+<meta name="twitter:title" content="Authentication">
 <meta name="twitter:description" content="">
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Cheat Sheets",
-      "item": "https://nooblogaurus.com/cheat-sheets/"
-    }
-  ]
-}
-</script>
 </head>
 
 <body class="list" id="top">
@@ -130,7 +114,7 @@
             </li>
             <li>
                 <a href="https://nooblogaurus.com/cheat-sheets/" title="Cheat Sheets">
-                    <span class="active">Cheat Sheets</span>
+                    <span>Cheat Sheets</span>
                 </a>
             </li>
             <li>
@@ -154,28 +138,11 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Cheat Sheets
+    Authentication
   </h1>
 </header>
-<div class="post-content"><p>My cheat sheets are like the sticky notes of my brain—quick, messy, but (hopefully) useful. Feel free to swipe them, tweak them, or point out what I’ve missed. Sharing is caring, right ?</p>
 
-
-</div>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ffuf
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>FFUF (Fuzz Faster U Fool) is a fast and flexible web fuzzer that helps penetration testers and security researchers discover directories, files, parameters, and more.
-Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ Examples # Filter responses with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -u https://target_url/ -H &#34;Host: FUZZ&#34; -fs 4242 # Filter responses with a 401 status code ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 # Filter 401 responses and fuzz passwords in a POST request ffuf -w /path/to/postdata.txt -X POST -d &#34;username=admin\&amp;password=FUZZ&#34; -u https://target_url/login.php -fc 401 Common Flags -c: Enable colorized output. -maxtime: Set the maximum runtime for the process in seconds. -p: Set a delay between requests (e.g., 0.1 seconds). -v: Verbose output. -t: Number of threads (default is 40). -mc: Match specific HTTP status codes (e.g., 200, 301, 403, or all). -fc: Filter out responses by HTTP status codes. -w: Specify the wordlist path. -u: Define the target URL. -s: Enable silent mode. -recursion: Enable recursive fuzzing. -r: Follow redirects. -o: Output results to a file. -of: Specify output format (e.g., json, html, csv, all). -b: Include cookies in the request. Examples # Match all responses, filter 42-byte answers, output colored and verbose ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v # Fuzz host headers and show only status 200 responses ffuf -w hosts.txt -u https://example.org/ -H &#34;Host: FUZZ&#34; -mc 200 # Fuzz the `name` field in a POST request with JSON data, filter responses containing &#34;error&#34; ffuf -w entries.txt -u https://example.org/ -X POST -H &#34;Content-Type: application/json&#34; \ -d &#39;{&#34;name&#34;: &#34;FUZZ&#34;, &#34;anotherkey&#34;: &#34;anothervalue&#34;}&#39; -fr &#34;error&#34; # Use two wordlists for parameter and value fuzzing, match responses containing &#34;VAL&#34; ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr &#34;VAL&#34; -c Tips and Tricks Interactive Mode: Press Enter while FFUF is running to access interactive features, such as reconfiguring filters or saving the state. Multiple Payloads: Use the FUZZ keyword multiple times in a URL (e.g., https://example.org/path/FUZZ/another_path/FUZZ). Variables in URLs: Specify payload locations using variables (e.g., https://example.org/path/{var1}/another_path/{var2}). </p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to ffuf" href="https://nooblogaurus.com/cheat-sheets/ffuf/"></a>
-</article>
-
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Hydra Cheat Sheet
     </h2>
@@ -189,55 +156,6 @@ Brute-force SSH login with a single username and password list: hydra -l admin -
   <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
   <a class="entry-link" aria-label="post link to Hydra Cheat Sheet" href="https://nooblogaurus.com/cheat-sheets/hydra/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">nmap
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🛠️ Nmap Cheat Sheet 🚀 Introduction This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.
-📌 1. Basic Syntax # Standard scan nmap &lt;target IP&gt; # Stealth scan with verbose output and no ping sudo nmap -sS -Pn -v 10.10.10.10 # Aggressive scan with version detection sudo nmap -A -sS -Pn 10.10.10.10 # Full port scan with OS detection and vulnerability scripts sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 📌 2. Common Flags Flag Description -p &lt;PORT&gt; Scan specific port -p- Scan all ports (1-65535) -sT TCP Connect scan -sU UDP scan -sV Detect services and versions -Pn Disable host discovery (no ping) -sS SYN “Stealth” scan -oA Output in all formats -sn Host discovery only (no port scan) -A Enable OS detection and version scan -O OS detection -v, -vv, -vvv Verbose output (levels) --script=vuln Run vulnerability detection scripts --script=vulners Run detailed vulnerability checks --script=http-enum Enumerate web server endpoints 📌 3. Output Formats Flag Description -oN Normal text output -oX XML output -oG Greppable output -oA Output in all three formats Example:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to nmap" href="https://nooblogaurus.com/cheat-sheets/nmap/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Meterpreter
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Basic Commands Start with the essentials to get a lay of the land:
-help: Display a list of available commands (your lifeline when you’re lost). sysinfo: Get basic system information, including OS and hostname (think of it as a “who am I dealing with?”). ps: List running processes. kill &lt;PID&gt;: Terminate a process by its PID (because some processes just need to “go away”). migrate &lt;PID&gt;: Move Meterpreter to a different process to stay under the radar. rev2self: Revert privileges to the original user (a “reset button” for when things get weird). File System Commands For poking around the file system:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-14 00:00:00 +0000 UTC'>December 14, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Meterpreter" href="https://nooblogaurus.com/cheat-sheets/meterpreter/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">smbclient
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>smbclient is a command-line tool that allows you to interact with SMB (Server Message Block) file shares. Whether you’re uploading files, listing directories, or troubleshooting network shares, this tool is your go-to for SMB.
-Basic Usage To connect to an SMB file share, use the following syntax:
-smbclient //server/share [options] Replace server with the hostname or IP address of the server hosting the file share. Replace share with the name of the file share. Once connected, you will be prompted for credentials. After successful authentication, a command prompt will allow you to interact with the share.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-12-14 00:00:00 +0000 UTC'>December 14, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to smbclient" href="https://nooblogaurus.com/cheat-sheets/smbclient/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://nooblogaurus.com/cheat-sheets/page/2/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
     </main>
     
 <footer class="footer">

