@@ -92,50 +92,123 @@
       <link>https://nooblogaurus.com/cheat-sheets/nmap/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
       <guid>https://nooblogaurus.com/cheat-sheets/nmap/</guid>
-      <description>&lt;h2 id=&#34;basic-syntax&#34;&gt;Basic Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap &amp;lt;target IP&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sT -sS -Pn -v 10.10.10.10
+      <description>&lt;h3 id=&#34;--nmap-cheat-sheet&#34;&gt;&lt;strong&gt;🛠️  Nmap Cheat Sheet&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;-introduction&#34;&gt;🚀 &lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;This cheat sheet provides a quick reference for &lt;strong&gt;Nmap&lt;/strong&gt;, including syntax, common flags, output formats, and advanced scripts for &lt;strong&gt;SMB&lt;/strong&gt; and &lt;strong&gt;SSH&lt;/strong&gt; enumeration.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-1-basic-syntax&#34;&gt;📌 &lt;strong&gt;1. Basic Syntax&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Standard scan&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap &amp;lt;target IP&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Stealth scan with verbose output and no ping&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sS -Pn -v 10.10.10.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Aggressive scan with version detection&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -A -sS -Pn 10.10.10.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Full port scan with OS detection and vulnerability scripts&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;common-flags&#34;&gt;Common Flags&lt;/h2&gt;
-&lt;h3 id=&#34;scan-types&#34;&gt;Scan Types&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-sT&lt;/code&gt;&lt;/strong&gt;: Perform a TCP connect scan.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-sU&lt;/code&gt;&lt;/strong&gt;: Perform a UDP scan.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-sS&lt;/code&gt;&lt;/strong&gt;: Perform a SYN scan (&amp;ldquo;Stealth Scan&amp;rdquo;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-Pn&lt;/code&gt;&lt;/strong&gt;: Skip pinging the target.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-sn&lt;/code&gt;&lt;/strong&gt;: Host discovery without scanning ports.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-A&lt;/code&gt;&lt;/strong&gt;: Enable aggressive scan options.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;advanced-features&#34;&gt;Advanced Features&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-p &amp;lt;PORT&amp;gt;&lt;/code&gt;&lt;/strong&gt;: Scan specific ports.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-p-&lt;/code&gt;&lt;/strong&gt;: Scan all 65,535 ports.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-sV&lt;/code&gt;&lt;/strong&gt;: Detect services and versions running on the target.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-O&lt;/code&gt;&lt;/strong&gt;: Detect the operating system.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-v&lt;/code&gt;, &lt;code&gt;-vv&lt;/code&gt;, &lt;code&gt;-vvv&lt;/code&gt;&lt;/strong&gt;: Set verbosity levels.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;--script vuln&lt;/code&gt;&lt;/strong&gt;: Run vulnerability scripts.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;--script vulners&lt;/code&gt;&lt;/strong&gt;: Use vulners scripts for CVE-based scanning.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;--script=http-enum&lt;/code&gt;&lt;/strong&gt;: Act like Nikto to enumerate HTTP resources.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;output-formats&#34;&gt;Output Formats&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-oN&lt;/code&gt;&lt;/strong&gt;: Normal text output, best for human-readable logs during manual reviews.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-oX&lt;/code&gt;&lt;/strong&gt;: XML output, ideal for automated tools or integrations that require structured data.&lt;/li&gt;
-&lt;li&gt;``: Greppable output, useful for scripting and quickly filtering resulst with tools like &lt;code&gt;grep&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;-oA&lt;/code&gt;&lt;/strong&gt;: Generate all three formats at once, providing maximum flexibility for further analysis or reporting.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;smb-scripts&#34;&gt;SMB Scripts&lt;/h2&gt;
-&lt;h3 id=&#34;enumerate-security-mode&#34;&gt;Enumerate Security Mode&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p445 --script smb-security-mode 192.168.1.1
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;enumerate-sessions&#34;&gt;Enumerate Sessions&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p445 --script smb-enum-sessions 192.168.1.1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p445 --script smb-enum-sessions --script-args smbusername&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;administrator,smbpassword&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;password 192.168.1.1
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;enumerate-shares&#34;&gt;Enumerate Shares&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p445 --script smb-enum-shares 192.168.1.1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p445 --script smb-enum-shares --script-args smbusername&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;administrator,smbpassword&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;password 192.168.1.1
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;enumerate-shares-with-listing&#34;&gt;Enumerate Shares with Listing&lt;/h3&gt;
-&lt;p&gt;Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.&lt;/p&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-2-common-flags&#34;&gt;📌 &lt;strong&gt;2. Common Flags&lt;/strong&gt;&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Flag&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-p &amp;lt;PORT&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scan specific port&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-p-&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scan all ports (1-65535)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-sT&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;TCP Connect scan&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-sU&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;UDP scan&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-sV&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Detect services and versions&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-Pn&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Disable host discovery (no ping)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-sS&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;SYN &amp;ldquo;Stealth&amp;rdquo; scan&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-oA&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Output in all formats&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-sn&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Host discovery only (no port scan)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-A&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Enable OS detection and version scan&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-O&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;OS detection&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-v&lt;/code&gt;, &lt;code&gt;-vv&lt;/code&gt;, &lt;code&gt;-vvv&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Verbose output (levels)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--script=vuln&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Run vulnerability detection scripts&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--script=vulners&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Run detailed vulnerability checks&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--script=http-enum&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Enumerate web server endpoints&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-3-output-formats&#34;&gt;📌 &lt;strong&gt;3. Output Formats&lt;/strong&gt;&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Flag&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-oN&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Normal text output&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-oX&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;XML output&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-oG&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Greppable output&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-oA&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Output in all three formats&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Meterpreter</title>

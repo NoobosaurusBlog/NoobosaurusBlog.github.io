@@ -7,50 +7,123 @@
 <meta name="robots" content="index, follow">
 <title>nmap | Nooblogaurus</title>
 <meta name="keywords" content="cheat sheet">
-<meta name="description" content="Basic Syntax
+<meta name="description" content="🛠️  Nmap Cheat Sheet
+🚀 Introduction
+This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.
+
+📌 1. Basic Syntax
+# Standard scan
 nmap &lt;target IP&gt;
-nmap -sT -sS -Pn -v 10.10.10.10
+
+# Stealth scan with verbose output and no ping
+sudo nmap -sS -Pn -v 10.10.10.10
+
+# Aggressive scan with version detection
 sudo nmap -A -sS -Pn 10.10.10.10
+
+# Full port scan with OS detection and vulnerability scripts
 sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10
-Common Flags
-Scan Types
 
--sT: Perform a TCP connect scan.
--sU: Perform a UDP scan.
--sS: Perform a SYN scan (&ldquo;Stealth Scan&rdquo;).
--Pn: Skip pinging the target.
--sn: Host discovery without scanning ports.
--A: Enable aggressive scan options.
+📌 2. Common Flags
 
-Advanced Features
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -p &lt;PORT&gt;
+          Scan specific port
+      
+      
+          -p-
+          Scan all ports (1-65535)
+      
+      
+          -sT
+          TCP Connect scan
+      
+      
+          -sU
+          UDP scan
+      
+      
+          -sV
+          Detect services and versions
+      
+      
+          -Pn
+          Disable host discovery (no ping)
+      
+      
+          -sS
+          SYN &ldquo;Stealth&rdquo; scan
+      
+      
+          -oA
+          Output in all formats
+      
+      
+          -sn
+          Host discovery only (no port scan)
+      
+      
+          -A
+          Enable OS detection and version scan
+      
+      
+          -O
+          OS detection
+      
+      
+          -v, -vv, -vvv
+          Verbose output (levels)
+      
+      
+          --script=vuln
+          Run vulnerability detection scripts
+      
+      
+          --script=vulners
+          Run detailed vulnerability checks
+      
+      
+          --script=http-enum
+          Enumerate web server endpoints
+      
+  
 
--p &lt;PORT&gt;: Scan specific ports.
--p-: Scan all 65,535 ports.
--sV: Detect services and versions running on the target.
--O: Detect the operating system.
--v, -vv, -vvv: Set verbosity levels.
---script vuln: Run vulnerability scripts.
---script vulners: Use vulners scripts for CVE-based scanning.
---script=http-enum: Act like Nikto to enumerate HTTP resources.
 
-Output Formats
+📌 3. Output Formats
 
--oN: Normal text output, best for human-readable logs during manual reviews.
--oX: XML output, ideal for automated tools or integrations that require structured data.
-``: Greppable output, useful for scripting and quickly filtering resulst with tools like grep.
--oA: Generate all three formats at once, providing maximum flexibility for further analysis or reporting.
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -oN
+          Normal text output
+      
+      
+          -oX
+          XML output
+      
+      
+          -oG
+          Greppable output
+      
+      
+          -oA
+          Output in all three formats
+      
+  
 
-SMB Scripts
-Enumerate Security Mode
-nmap -p445 --script smb-security-mode 192.168.1.1
-Enumerate Sessions
-nmap -p445 --script smb-enum-sessions 192.168.1.1
-nmap -p445 --script smb-enum-sessions --script-args smbusername=administrator,smbpassword=password 192.168.1.1
-Enumerate Shares
-nmap -p445 --script smb-enum-shares 192.168.1.1
-nmap -p445 --script smb-enum-shares --script-args smbusername=administrator,smbpassword=password 192.168.1.1
-Enumerate Shares with Listing
-Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.">
+Example:">
 <meta name="author" content="">
 <link rel="canonical" href="https://nooblogaurus.com/cheat-sheets/nmap/">
 <link crossorigin="anonymous" href="https://nooblogaurus.com/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
@@ -101,7 +174,8 @@ Listing shares and their contents can reveal valuable information about a system
 </noscript><meta property="og:url" content="https://nooblogaurus.com/cheat-sheets/nmap/">
   <meta property="og:site_name" content="Nooblogaurus">
   <meta property="og:title" content="nmap">
-  <meta property="og:description" content="Basic Syntax nmap &lt;target IP&gt; nmap -sT -sS -Pn -v 10.10.10.10 sudo nmap -A -sS -Pn 10.10.10.10 sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 Common Flags Scan Types -sT: Perform a TCP connect scan. -sU: Perform a UDP scan. -sS: Perform a SYN scan (“Stealth Scan”). -Pn: Skip pinging the target. -sn: Host discovery without scanning ports. -A: Enable aggressive scan options. Advanced Features -p &lt;PORT&gt;: Scan specific ports. -p-: Scan all 65,535 ports. -sV: Detect services and versions running on the target. -O: Detect the operating system. -v, -vv, -vvv: Set verbosity levels. --script vuln: Run vulnerability scripts. --script vulners: Use vulners scripts for CVE-based scanning. --script=http-enum: Act like Nikto to enumerate HTTP resources. Output Formats -oN: Normal text output, best for human-readable logs during manual reviews. -oX: XML output, ideal for automated tools or integrations that require structured data. ``: Greppable output, useful for scripting and quickly filtering resulst with tools like grep. -oA: Generate all three formats at once, providing maximum flexibility for further analysis or reporting. SMB Scripts Enumerate Security Mode nmap -p445 --script smb-security-mode 192.168.1.1 Enumerate Sessions nmap -p445 --script smb-enum-sessions 192.168.1.1 nmap -p445 --script smb-enum-sessions --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares nmap -p445 --script smb-enum-shares 192.168.1.1 nmap -p445 --script smb-enum-shares --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares with Listing Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.">
+  <meta property="og:description" content="🛠️ Nmap Cheat Sheet 🚀 Introduction This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.
+📌 1. Basic Syntax # Standard scan nmap &lt;target IP&gt; # Stealth scan with verbose output and no ping sudo nmap -sS -Pn -v 10.10.10.10 # Aggressive scan with version detection sudo nmap -A -sS -Pn 10.10.10.10 # Full port scan with OS detection and vulnerability scripts sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 📌 2. Common Flags Flag Description -p &lt;PORT&gt; Scan specific port -p- Scan all ports (1-65535) -sT TCP Connect scan -sU UDP scan -sV Detect services and versions -Pn Disable host discovery (no ping) -sS SYN “Stealth” scan -oA Output in all formats -sn Host discovery only (no port scan) -A Enable OS detection and version scan -O OS detection -v, -vv, -vvv Verbose output (levels) --script=vuln Run vulnerability detection scripts --script=vulners Run detailed vulnerability checks --script=http-enum Enumerate web server endpoints 📌 3. Output Formats Flag Description -oN Normal text output -oX XML output -oG Greppable output -oA Output in all three formats Example:">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="cheat-sheets">
@@ -110,50 +184,123 @@ Listing shares and their contents can reveal valuable information about a system
     <meta property="article:tag" content="Cheat Sheet">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nmap">
-<meta name="twitter:description" content="Basic Syntax
+<meta name="twitter:description" content="🛠️  Nmap Cheat Sheet
+🚀 Introduction
+This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.
+
+📌 1. Basic Syntax
+# Standard scan
 nmap &lt;target IP&gt;
-nmap -sT -sS -Pn -v 10.10.10.10
+
+# Stealth scan with verbose output and no ping
+sudo nmap -sS -Pn -v 10.10.10.10
+
+# Aggressive scan with version detection
 sudo nmap -A -sS -Pn 10.10.10.10
+
+# Full port scan with OS detection and vulnerability scripts
 sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10
-Common Flags
-Scan Types
 
--sT: Perform a TCP connect scan.
--sU: Perform a UDP scan.
--sS: Perform a SYN scan (&ldquo;Stealth Scan&rdquo;).
--Pn: Skip pinging the target.
--sn: Host discovery without scanning ports.
--A: Enable aggressive scan options.
+📌 2. Common Flags
 
-Advanced Features
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -p &lt;PORT&gt;
+          Scan specific port
+      
+      
+          -p-
+          Scan all ports (1-65535)
+      
+      
+          -sT
+          TCP Connect scan
+      
+      
+          -sU
+          UDP scan
+      
+      
+          -sV
+          Detect services and versions
+      
+      
+          -Pn
+          Disable host discovery (no ping)
+      
+      
+          -sS
+          SYN &ldquo;Stealth&rdquo; scan
+      
+      
+          -oA
+          Output in all formats
+      
+      
+          -sn
+          Host discovery only (no port scan)
+      
+      
+          -A
+          Enable OS detection and version scan
+      
+      
+          -O
+          OS detection
+      
+      
+          -v, -vv, -vvv
+          Verbose output (levels)
+      
+      
+          --script=vuln
+          Run vulnerability detection scripts
+      
+      
+          --script=vulners
+          Run detailed vulnerability checks
+      
+      
+          --script=http-enum
+          Enumerate web server endpoints
+      
+  
 
--p &lt;PORT&gt;: Scan specific ports.
--p-: Scan all 65,535 ports.
--sV: Detect services and versions running on the target.
--O: Detect the operating system.
--v, -vv, -vvv: Set verbosity levels.
---script vuln: Run vulnerability scripts.
---script vulners: Use vulners scripts for CVE-based scanning.
---script=http-enum: Act like Nikto to enumerate HTTP resources.
 
-Output Formats
+📌 3. Output Formats
 
--oN: Normal text output, best for human-readable logs during manual reviews.
--oX: XML output, ideal for automated tools or integrations that require structured data.
-``: Greppable output, useful for scripting and quickly filtering resulst with tools like grep.
--oA: Generate all three formats at once, providing maximum flexibility for further analysis or reporting.
+  
+      
+          Flag
+          Description
+      
+  
+  
+      
+          -oN
+          Normal text output
+      
+      
+          -oX
+          XML output
+      
+      
+          -oG
+          Greppable output
+      
+      
+          -oA
+          Output in all three formats
+      
+  
 
-SMB Scripts
-Enumerate Security Mode
-nmap -p445 --script smb-security-mode 192.168.1.1
-Enumerate Sessions
-nmap -p445 --script smb-enum-sessions 192.168.1.1
-nmap -p445 --script smb-enum-sessions --script-args smbusername=administrator,smbpassword=password 192.168.1.1
-Enumerate Shares
-nmap -p445 --script smb-enum-shares 192.168.1.1
-nmap -p445 --script smb-enum-shares --script-args smbusername=administrator,smbpassword=password 192.168.1.1
-Enumerate Shares with Listing
-Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.">
+Example:">
 
 
 <script type="application/ld+json">
@@ -182,12 +329,12 @@ Listing shares and their contents can reveal valuable information about a system
   "@type": "BlogPosting",
   "headline": "nmap",
   "name": "nmap",
-  "description": "Basic Syntax nmap \u0026lt;target IP\u0026gt; nmap -sT -sS -Pn -v 10.10.10.10 sudo nmap -A -sS -Pn 10.10.10.10 sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 Common Flags Scan Types -sT: Perform a TCP connect scan. -sU: Perform a UDP scan. -sS: Perform a SYN scan (\u0026ldquo;Stealth Scan\u0026rdquo;). -Pn: Skip pinging the target. -sn: Host discovery without scanning ports. -A: Enable aggressive scan options. Advanced Features -p \u0026lt;PORT\u0026gt;: Scan specific ports. -p-: Scan all 65,535 ports. -sV: Detect services and versions running on the target. -O: Detect the operating system. -v, -vv, -vvv: Set verbosity levels. --script vuln: Run vulnerability scripts. --script vulners: Use vulners scripts for CVE-based scanning. --script=http-enum: Act like Nikto to enumerate HTTP resources. Output Formats -oN: Normal text output, best for human-readable logs during manual reviews. -oX: XML output, ideal for automated tools or integrations that require structured data. ``: Greppable output, useful for scripting and quickly filtering resulst with tools like grep. -oA: Generate all three formats at once, providing maximum flexibility for further analysis or reporting. SMB Scripts Enumerate Security Mode nmap -p445 --script smb-security-mode 192.168.1.1 Enumerate Sessions nmap -p445 --script smb-enum-sessions 192.168.1.1 nmap -p445 --script smb-enum-sessions --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares nmap -p445 --script smb-enum-shares 192.168.1.1 nmap -p445 --script smb-enum-shares --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares with Listing Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.\n",
+  "description": "🛠️ Nmap Cheat Sheet 🚀 Introduction This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.\n📌 1. Basic Syntax # Standard scan nmap \u0026lt;target IP\u0026gt; # Stealth scan with verbose output and no ping sudo nmap -sS -Pn -v 10.10.10.10 # Aggressive scan with version detection sudo nmap -A -sS -Pn 10.10.10.10 # Full port scan with OS detection and vulnerability scripts sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 📌 2. Common Flags Flag Description -p \u0026lt;PORT\u0026gt; Scan specific port -p- Scan all ports (1-65535) -sT TCP Connect scan -sU UDP scan -sV Detect services and versions -Pn Disable host discovery (no ping) -sS SYN \u0026ldquo;Stealth\u0026rdquo; scan -oA Output in all formats -sn Host discovery only (no port scan) -A Enable OS detection and version scan -O OS detection -v, -vv, -vvv Verbose output (levels) --script=vuln Run vulnerability detection scripts --script=vulners Run detailed vulnerability checks --script=http-enum Enumerate web server endpoints 📌 3. Output Formats Flag Description -oN Normal text output -oX XML output -oG Greppable output -oA Output in all three formats Example:\n",
   "keywords": [
     "cheat sheet"
   ],
-  "articleBody": "Basic Syntax nmap nmap -sT -sS -Pn -v 10.10.10.10 sudo nmap -A -sS -Pn 10.10.10.10 sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 Common Flags Scan Types -sT: Perform a TCP connect scan. -sU: Perform a UDP scan. -sS: Perform a SYN scan (“Stealth Scan”). -Pn: Skip pinging the target. -sn: Host discovery without scanning ports. -A: Enable aggressive scan options. Advanced Features -p : Scan specific ports. -p-: Scan all 65,535 ports. -sV: Detect services and versions running on the target. -O: Detect the operating system. -v, -vv, -vvv: Set verbosity levels. --script vuln: Run vulnerability scripts. --script vulners: Use vulners scripts for CVE-based scanning. --script=http-enum: Act like Nikto to enumerate HTTP resources. Output Formats -oN: Normal text output, best for human-readable logs during manual reviews. -oX: XML output, ideal for automated tools or integrations that require structured data. ``: Greppable output, useful for scripting and quickly filtering resulst with tools like grep. -oA: Generate all three formats at once, providing maximum flexibility for further analysis or reporting. SMB Scripts Enumerate Security Mode nmap -p445 --script smb-security-mode 192.168.1.1 Enumerate Sessions nmap -p445 --script smb-enum-sessions 192.168.1.1 nmap -p445 --script smb-enum-sessions --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares nmap -p445 --script smb-enum-shares 192.168.1.1 nmap -p445 --script smb-enum-shares --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Shares with Listing Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.\nnmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Users nmap -p445 --script smb-enum-users --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Stats nmap -p445 --script smb-enum-stats --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Domains nmap -p445 --script smb-enum-domains --script-args smbusername=administrator,smbpassword=password 192.168.1.1 Enumerate Groups nmap -p445 --script smb-enum-groups --script-args smbusername=administrator,smbpassword=password 192.168.1.1 SSH Scripts Enumerate Algorithms nmap 192.168.1.1 -p 22 --script ssh2-enum-algos Enumerate Host Keys nmap 192.168.1.1 -p 22 --script ssh-hostkey --script-args ssh_hostkey=full Enumerate Authentication Methods nmap 192.168.1.1 -p 22 --script ssh-auth-methods --script-args=\"ssh.user=admin\" ",
-  "wordCount" : "326",
+  "articleBody": "🛠️ Nmap Cheat Sheet 🚀 Introduction This cheat sheet provides a quick reference for Nmap, including syntax, common flags, output formats, and advanced scripts for SMB and SSH enumeration.\n📌 1. Basic Syntax # Standard scan nmap # Stealth scan with verbose output and no ping sudo nmap -sS -Pn -v 10.10.10.10 # Aggressive scan with version detection sudo nmap -A -sS -Pn 10.10.10.10 # Full port scan with OS detection and vulnerability scripts sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10 📌 2. Common Flags Flag Description -p Scan specific port -p- Scan all ports (1-65535) -sT TCP Connect scan -sU UDP scan -sV Detect services and versions -Pn Disable host discovery (no ping) -sS SYN “Stealth” scan -oA Output in all formats -sn Host discovery only (no port scan) -A Enable OS detection and version scan -O OS detection -v, -vv, -vvv Verbose output (levels) --script=vuln Run vulnerability detection scripts --script=vulners Run detailed vulnerability checks --script=http-enum Enumerate web server endpoints 📌 3. Output Formats Flag Description -oN Normal text output -oX XML output -oG Greppable output -oA Output in all three formats Example:\nsudo nmap -sS -p- -oA scan_results 10.10.10.10 📌 4. SMB Enumeration 🖥️ Security Mode nmap -p445 --script smb-security-mode 192.168.1.1 👤 Enumerate Sessions nmap -p445 --script smb-enum-sessions 192.168.1.1 nmap -p445 --script smb-enum-sessions --script-args smbusername=admin,smbpassword=pass 192.168.1.1 📂 Enumerate Shares nmap -p445 --script smb-enum-shares 192.168.1.1 nmap -p445 --script smb-enum-shares --script-args smbusername=admin,smbpassword=pass 192.168.1.1 📂 List Share Contents nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=admin,smbpassword=pass 192.168.1.1 👥 Enumerate Users nmap -p445 --script smb-enum-users --script-args smbusername=admin,smbpassword=pass 192.168.1.1 📊 Enumerate Stats nmap -p445 --script smb-enum-stats --script-args smbusername=admin,smbpassword=pass 192.168.1.1 🌐 Enumerate Domains nmap -p445 --script smb-enum-domains --script-args smbusername=admin,smbpassword=pass 192.168.1.1 👑 Enumerate Groups nmap -p445 --script smb-enum-groups --script-args smbusername=admin,smbpassword=pass 192.168.1.1 📌 5. SSH Enumeration 🔑 Enumerate Algorithms nmap -p22 --script ssh2-enum-algos 192.168.1.1 🔐 Enumerate Host Keys nmap -p22 --script ssh-hostkey --script-args ssh_hostkey=full 192.168.1.1 🔑 Authentication Methods for a User nmap -p22 --script ssh-auth-methods --script-args=\"ssh.user=admin\" 192.168.1.1 🚀 Brute-Force SSH Login hydra -l 'user' -P 'passwords_list.txt' 192.168.1.1 ssh 📌 6. Advanced Nmap Commands 🚨 Vulnerability Scan nmap -sV --script vuln 192.168.1.1 🛡️ Firewall Detection sudo nmap -sA 192.168.1.1 🌐 Website Enumeration nmap --script=http-enum 192.168.1.1 🔍 Detect Backdoors nmap -p- --script=backdoor 192.168.1.1 🧠 Scan Timing Options Flag Timing Profile -T0 Paranoid (slowest) -T1 Sneaky -T2 Polite -T3 Normal (default) -T4 Aggressive -T5 Insane (fastest) Example:\nsudo nmap -sS -T4 192.168.1.1 📌 7. Performance Optimization Scan Multiple Targets:\nnmap -iL targets.txt Exclude Targets:\nnmap 192.168.1.0/24 --exclude 192.168.1.5 Rate Limit Scans:\nnmap --max-rate 100 192.168.1.1 📌 8. Useful References Nmap Scripting Engine (NSE): Nmap NSE Scripts Nmap Documentation: Nmap Docs 🏁 Quick Examples Recap Aggressive Scan:\nsudo nmap -A 10.10.10.10 Service Version Detection:\nsudo nmap -sV 192.168.1.1 Full Vulnerability Scan:\nsudo nmap --script=vuln 192.168.1.1 ",
+  "wordCount" : "459",
   "inLanguage": "en",
   "datePublished": "2024-12-15T00:00:00Z",
   "dateModified": "2024-12-15T00:00:00Z",
@@ -287,67 +434,241 @@ Listing shares and their contents can reveal valuable information about a system
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="basic-syntax">Basic Syntax<a hidden class="anchor" aria-hidden="true" href="#basic-syntax">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap &lt;target IP&gt;
-</span></span><span style="display:flex;"><span>nmap -sT -sS -Pn -v 10.10.10.10
+  <div class="post-content"><h3 id="--nmap-cheat-sheet"><strong>🛠️  Nmap Cheat Sheet</strong><a hidden class="anchor" aria-hidden="true" href="#--nmap-cheat-sheet">#</a></h3>
+<h4 id="-introduction">🚀 <strong>Introduction</strong><a hidden class="anchor" aria-hidden="true" href="#-introduction">#</a></h4>
+<p>This cheat sheet provides a quick reference for <strong>Nmap</strong>, including syntax, common flags, output formats, and advanced scripts for <strong>SMB</strong> and <strong>SSH</strong> enumeration.</p>
+<hr>
+<h2 id="-1-basic-syntax">📌 <strong>1. Basic Syntax</strong><a hidden class="anchor" aria-hidden="true" href="#-1-basic-syntax">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Standard scan</span>
+</span></span><span style="display:flex;"><span>nmap &lt;target IP&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Stealth scan with verbose output and no ping</span>
+</span></span><span style="display:flex;"><span>sudo nmap -sS -Pn -v 10.10.10.10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Aggressive scan with version detection</span>
 </span></span><span style="display:flex;"><span>sudo nmap -A -sS -Pn 10.10.10.10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Full port scan with OS detection and vulnerability scripts</span>
 </span></span><span style="display:flex;"><span>sudo nmap -sV -sT -O -p- -vv --script vulners 10.10.10.10
-</span></span></code></pre></div><h2 id="common-flags">Common Flags<a hidden class="anchor" aria-hidden="true" href="#common-flags">#</a></h2>
-<h3 id="scan-types">Scan Types<a hidden class="anchor" aria-hidden="true" href="#scan-types">#</a></h3>
-<ul>
-<li><strong><code>-sT</code></strong>: Perform a TCP connect scan.</li>
-<li><strong><code>-sU</code></strong>: Perform a UDP scan.</li>
-<li><strong><code>-sS</code></strong>: Perform a SYN scan (&ldquo;Stealth Scan&rdquo;).</li>
-<li><strong><code>-Pn</code></strong>: Skip pinging the target.</li>
-<li><strong><code>-sn</code></strong>: Host discovery without scanning ports.</li>
-<li><strong><code>-A</code></strong>: Enable aggressive scan options.</li>
-</ul>
-<h3 id="advanced-features">Advanced Features<a hidden class="anchor" aria-hidden="true" href="#advanced-features">#</a></h3>
-<ul>
-<li><strong><code>-p &lt;PORT&gt;</code></strong>: Scan specific ports.</li>
-<li><strong><code>-p-</code></strong>: Scan all 65,535 ports.</li>
-<li><strong><code>-sV</code></strong>: Detect services and versions running on the target.</li>
-<li><strong><code>-O</code></strong>: Detect the operating system.</li>
-<li><strong><code>-v</code>, <code>-vv</code>, <code>-vvv</code></strong>: Set verbosity levels.</li>
-<li><strong><code>--script vuln</code></strong>: Run vulnerability scripts.</li>
-<li><strong><code>--script vulners</code></strong>: Use vulners scripts for CVE-based scanning.</li>
-<li><strong><code>--script=http-enum</code></strong>: Act like Nikto to enumerate HTTP resources.</li>
-</ul>
-<h2 id="output-formats">Output Formats<a hidden class="anchor" aria-hidden="true" href="#output-formats">#</a></h2>
-<ul>
-<li><strong><code>-oN</code></strong>: Normal text output, best for human-readable logs during manual reviews.</li>
-<li><strong><code>-oX</code></strong>: XML output, ideal for automated tools or integrations that require structured data.</li>
-<li>``: Greppable output, useful for scripting and quickly filtering resulst with tools like <code>grep</code>.</li>
-<li><strong><code>-oA</code></strong>: Generate all three formats at once, providing maximum flexibility for further analysis or reporting.</li>
-</ul>
-<h2 id="smb-scripts">SMB Scripts<a hidden class="anchor" aria-hidden="true" href="#smb-scripts">#</a></h2>
-<h3 id="enumerate-security-mode">Enumerate Security Mode<a hidden class="anchor" aria-hidden="true" href="#enumerate-security-mode">#</a></h3>
+</span></span></code></pre></div><hr>
+<h2 id="-2-common-flags">📌 <strong>2. Common Flags</strong><a hidden class="anchor" aria-hidden="true" href="#-2-common-flags">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Flag</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-p &lt;PORT&gt;</code></td>
+          <td>Scan specific port</td>
+      </tr>
+      <tr>
+          <td><code>-p-</code></td>
+          <td>Scan all ports (1-65535)</td>
+      </tr>
+      <tr>
+          <td><code>-sT</code></td>
+          <td>TCP Connect scan</td>
+      </tr>
+      <tr>
+          <td><code>-sU</code></td>
+          <td>UDP scan</td>
+      </tr>
+      <tr>
+          <td><code>-sV</code></td>
+          <td>Detect services and versions</td>
+      </tr>
+      <tr>
+          <td><code>-Pn</code></td>
+          <td>Disable host discovery (no ping)</td>
+      </tr>
+      <tr>
+          <td><code>-sS</code></td>
+          <td>SYN &ldquo;Stealth&rdquo; scan</td>
+      </tr>
+      <tr>
+          <td><code>-oA</code></td>
+          <td>Output in all formats</td>
+      </tr>
+      <tr>
+          <td><code>-sn</code></td>
+          <td>Host discovery only (no port scan)</td>
+      </tr>
+      <tr>
+          <td><code>-A</code></td>
+          <td>Enable OS detection and version scan</td>
+      </tr>
+      <tr>
+          <td><code>-O</code></td>
+          <td>OS detection</td>
+      </tr>
+      <tr>
+          <td><code>-v</code>, <code>-vv</code>, <code>-vvv</code></td>
+          <td>Verbose output (levels)</td>
+      </tr>
+      <tr>
+          <td><code>--script=vuln</code></td>
+          <td>Run vulnerability detection scripts</td>
+      </tr>
+      <tr>
+          <td><code>--script=vulners</code></td>
+          <td>Run detailed vulnerability checks</td>
+      </tr>
+      <tr>
+          <td><code>--script=http-enum</code></td>
+          <td>Enumerate web server endpoints</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-3-output-formats">📌 <strong>3. Output Formats</strong><a hidden class="anchor" aria-hidden="true" href="#-3-output-formats">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Flag</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-oN</code></td>
+          <td>Normal text output</td>
+      </tr>
+      <tr>
+          <td><code>-oX</code></td>
+          <td>XML output</td>
+      </tr>
+      <tr>
+          <td><code>-oG</code></td>
+          <td>Greppable output</td>
+      </tr>
+      <tr>
+          <td><code>-oA</code></td>
+          <td>Output in all three formats</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sS -p- -oA scan_results 10.10.10.10
+</span></span></code></pre></div><hr>
+<h2 id="-4-smb-enumeration">📌 <strong>4. SMB Enumeration</strong><a hidden class="anchor" aria-hidden="true" href="#-4-smb-enumeration">#</a></h2>
+<h3 id="-security-mode">🖥️ <strong>Security Mode</strong><a hidden class="anchor" aria-hidden="true" href="#-security-mode">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-security-mode 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-sessions">Enumerate Sessions<a hidden class="anchor" aria-hidden="true" href="#enumerate-sessions">#</a></h3>
+</span></span></code></pre></div><h3 id="-enumerate-sessions">👤 <strong>Enumerate Sessions</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-sessions">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-sessions 192.168.1.1
-</span></span><span style="display:flex;"><span>nmap -p445 --script smb-enum-sessions --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-shares">Enumerate Shares<a hidden class="anchor" aria-hidden="true" href="#enumerate-shares">#</a></h3>
+</span></span><span style="display:flex;"><span>nmap -p445 --script smb-enum-sessions --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-shares">📂 <strong>Enumerate Shares</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-shares">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-shares 192.168.1.1
-</span></span><span style="display:flex;"><span>nmap -p445 --script smb-enum-shares --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-shares-with-listing">Enumerate Shares with Listing<a hidden class="anchor" aria-hidden="true" href="#enumerate-shares-with-listing">#</a></h3>
-<p>Listing shares and their contents can reveal valuable information about a system, such as misconfigured permissions or sensitive files stored in shared directories. This is especially important during audits or penetration tests to identify potential security gaps.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-users">Enumerate Users<a hidden class="anchor" aria-hidden="true" href="#enumerate-users">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-users --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-stats">Enumerate Stats<a hidden class="anchor" aria-hidden="true" href="#enumerate-stats">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-stats --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-domains">Enumerate Domains<a hidden class="anchor" aria-hidden="true" href="#enumerate-domains">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-domains --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h3 id="enumerate-groups">Enumerate Groups<a hidden class="anchor" aria-hidden="true" href="#enumerate-groups">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-groups --script-args smbusername<span style="color:#f92672">=</span>administrator,smbpassword<span style="color:#f92672">=</span>password 192.168.1.1
-</span></span></code></pre></div><h2 id="ssh-scripts">SSH Scripts<a hidden class="anchor" aria-hidden="true" href="#ssh-scripts">#</a></h2>
-<h3 id="enumerate-algorithms">Enumerate Algorithms<a hidden class="anchor" aria-hidden="true" href="#enumerate-algorithms">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap 192.168.1.1 -p <span style="color:#ae81ff">22</span> --script ssh2-enum-algos
-</span></span></code></pre></div><h3 id="enumerate-host-keys">Enumerate Host Keys<a hidden class="anchor" aria-hidden="true" href="#enumerate-host-keys">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap 192.168.1.1 -p <span style="color:#ae81ff">22</span> --script ssh-hostkey --script-args ssh_hostkey<span style="color:#f92672">=</span>full
-</span></span></code></pre></div><h3 id="enumerate-authentication-methods">Enumerate Authentication Methods<a hidden class="anchor" aria-hidden="true" href="#enumerate-authentication-methods">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap 192.168.1.1 -p <span style="color:#ae81ff">22</span> --script ssh-auth-methods --script-args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh.user=admin&#34;</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>nmap -p445 --script smb-enum-shares --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-list-share-contents">📂 <strong>List Share Contents</strong><a hidden class="anchor" aria-hidden="true" href="#-list-share-contents">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-users">👥 <strong>Enumerate Users</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-users">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-users --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-stats">📊 <strong>Enumerate Stats</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-stats">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-stats --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-domains">🌐 <strong>Enumerate Domains</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-domains">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-domains --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-groups">👑 <strong>Enumerate Groups</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-groups">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p445 --script smb-enum-groups --script-args smbusername<span style="color:#f92672">=</span>admin,smbpassword<span style="color:#f92672">=</span>pass 192.168.1.1
+</span></span></code></pre></div><hr>
+<h2 id="-5-ssh-enumeration">📌 <strong>5. SSH Enumeration</strong><a hidden class="anchor" aria-hidden="true" href="#-5-ssh-enumeration">#</a></h2>
+<h3 id="-enumerate-algorithms">🔑 <strong>Enumerate Algorithms</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-algorithms">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p22 --script ssh2-enum-algos 192.168.1.1
+</span></span></code></pre></div><h3 id="-enumerate-host-keys">🔐 <strong>Enumerate Host Keys</strong><a hidden class="anchor" aria-hidden="true" href="#-enumerate-host-keys">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p22 --script ssh-hostkey --script-args ssh_hostkey<span style="color:#f92672">=</span>full 192.168.1.1
+</span></span></code></pre></div><h3 id="-authentication-methods-for-a-user">🔑 <strong>Authentication Methods for a User</strong><a hidden class="anchor" aria-hidden="true" href="#-authentication-methods-for-a-user">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p22 --script ssh-auth-methods --script-args<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh.user=admin&#34;</span> 192.168.1.1
+</span></span></code></pre></div><h3 id="-brute-force-ssh-login">🚀 <strong>Brute-Force SSH Login</strong><a hidden class="anchor" aria-hidden="true" href="#-brute-force-ssh-login">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -l <span style="color:#e6db74">&#39;user&#39;</span> -P <span style="color:#e6db74">&#39;passwords_list.txt&#39;</span> 192.168.1.1 ssh
+</span></span></code></pre></div><hr>
+<h2 id="-6-advanced-nmap-commands">📌 <strong>6. Advanced Nmap Commands</strong><a hidden class="anchor" aria-hidden="true" href="#-6-advanced-nmap-commands">#</a></h2>
+<h3 id="-vulnerability-scan">🚨 <strong>Vulnerability Scan</strong><a hidden class="anchor" aria-hidden="true" href="#-vulnerability-scan">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sV --script vuln 192.168.1.1
+</span></span></code></pre></div><h3 id="-firewall-detection">🛡️ <strong>Firewall Detection</strong><a hidden class="anchor" aria-hidden="true" href="#-firewall-detection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sA 192.168.1.1
+</span></span></code></pre></div><h3 id="-website-enumeration">🌐 <strong>Website Enumeration</strong><a hidden class="anchor" aria-hidden="true" href="#-website-enumeration">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap --script<span style="color:#f92672">=</span>http-enum 192.168.1.1
+</span></span></code></pre></div><h3 id="-detect-backdoors">🔍 <strong>Detect Backdoors</strong><a hidden class="anchor" aria-hidden="true" href="#-detect-backdoors">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p- --script<span style="color:#f92672">=</span>backdoor 192.168.1.1
+</span></span></code></pre></div><h3 id="-scan-timing-options">🧠 <strong>Scan Timing Options</strong><a hidden class="anchor" aria-hidden="true" href="#-scan-timing-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Flag</strong></th>
+          <th><strong>Timing Profile</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-T0</code></td>
+          <td>Paranoid (slowest)</td>
+      </tr>
+      <tr>
+          <td><code>-T1</code></td>
+          <td>Sneaky</td>
+      </tr>
+      <tr>
+          <td><code>-T2</code></td>
+          <td>Polite</td>
+      </tr>
+      <tr>
+          <td><code>-T3</code></td>
+          <td>Normal (default)</td>
+      </tr>
+      <tr>
+          <td><code>-T4</code></td>
+          <td>Aggressive</td>
+      </tr>
+      <tr>
+          <td><code>-T5</code></td>
+          <td>Insane (fastest)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sS -T4 192.168.1.1
+</span></span></code></pre></div><hr>
+<h2 id="-7-performance-optimization">📌 <strong>7. Performance Optimization</strong><a hidden class="anchor" aria-hidden="true" href="#-7-performance-optimization">#</a></h2>
+<ul>
+<li>
+<p><strong>Scan Multiple Targets:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -iL targets.txt
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Exclude Targets:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap 192.168.1.0/24 --exclude 192.168.1.5
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Rate Limit Scans:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap --max-rate <span style="color:#ae81ff">100</span> 192.168.1.1
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="-8-useful-references">📌 <strong>8. Useful References</strong><a hidden class="anchor" aria-hidden="true" href="#-8-useful-references">#</a></h2>
+<ul>
+<li><strong>Nmap Scripting Engine (NSE):</strong> <a href="https://nmap.org/nsedoc/">Nmap NSE Scripts</a></li>
+<li><strong>Nmap Documentation:</strong> <a href="https://nmap.org/book/man.html">Nmap Docs</a></li>
+</ul>
+<hr>
+<h2 id="-quick-examples-recap">🏁 <strong>Quick Examples Recap</strong><a hidden class="anchor" aria-hidden="true" href="#-quick-examples-recap">#</a></h2>
+<ul>
+<li>
+<p><strong>Aggressive Scan:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -A 10.10.10.10
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Service Version Detection:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap -sV 192.168.1.1
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Full Vulnerability Scan:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nmap --script<span style="color:#f92672">=</span>vuln 192.168.1.1
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+
 
   </div>
 
@@ -360,7 +681,7 @@ Listing shares and their contents can reveal valuable information about a system
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
+        <span>&copy; 2025 <a href="https://nooblogaurus.com/">Nooblogaurus</a></span> · 
 
     <span>
         Powered by
